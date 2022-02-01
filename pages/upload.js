@@ -30,7 +30,6 @@ export default function Home() {
                 <title>Open Data Bayern</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Header />
             <main>
                 <div className="screen">
                     <div className="screen-title">
