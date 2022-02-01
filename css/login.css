@@ -1,0 +1,27 @@
+.screen-title {
+    font-size: 22px;
+    line-height: 28px;
+    text-align:center;
+    width:100%;
+}
+
+.login-detail {
+    text-align: center;
+    width: 100%;
+    font-size: 18px;
+    line-height: 28px;
+    margin:20px 0px;
+}
+
+.login-form{
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    align-items:center;
+    justify-content:center;
+}
+
+.login-form input{
+    margin:10px;
+
+}
