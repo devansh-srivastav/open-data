@@ -1,30 +1,8 @@
 import Head from 'next/head';
 import Header from './header.js';
-import { useState } from 'react'
 
 export default function Home() {
 
-    
-
-    const [query, setQuery] = useState({
-        name: "",
-        email: "",
-        org:""
-    });
-
-    
-    const handleChange = () => (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        setQuery((prevState) => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
-
-    const submit = () => {
-        console.log(query);
-    }
     return (
         <div className="container">
             <Head>
