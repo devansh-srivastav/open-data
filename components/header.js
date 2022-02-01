@@ -14,7 +14,7 @@ export default function Header() {
         <div className="header-containers">
             <header className="header">
                 <div className="header-div">
-                    <div> Open Data Platform Bayern</div>
+                    <div> <strong>Open Data Platform Bayern</strong></div>
                     <div>
                         {path=='/' && <button onClick={() => login()} className="button">
                             <h3>Einloggen</h3>

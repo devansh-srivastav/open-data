@@ -1,6 +1,10 @@
-import '../css/index.css';
-import '../css/login.css';
+import '../styles/index.css';
+import Header from '../components/header.js';
+import '../styles/login.css';
 
 export default function MyApp({ Component, pageProps }) {
-    return <Component {...pageProps} ></Component>
-}
+    return (<div>
+        <Header />
+        <Component {...pageProps} ></Component>
+    </div>
+    )}

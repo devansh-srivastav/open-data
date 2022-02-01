@@ -1,5 +1,6 @@
 import Head from 'next/head'
-import Header from './header.js';
+import Header from '../components/header.js';
+import Link from 'next/Link'
 
 export default function Home() {
 
@@ -13,7 +14,7 @@ export default function Home() {
         <title>Open Data Bayern</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      
       <main>
        
 
@@ -27,17 +28,17 @@ export default function Home() {
               <div className="grid">
                   <h3> Open Data Portal Statistik</h3>
                   <div className="card-grid">
-                  <div href="https://nextjs.org/docs" className="card">
+                  <div className="card">
                       <h1>92</h1>
                       <p>Datasets</p>
                       </div>
 
-                      <div href="https://nextjs.org/docs" className="card">
+                      <div className="card">
                       <h1>25</h1>
                       <p>Organizationen</p>
                       </div>
 
-                      <div href="https://nextjs.org/docs" className="card">
+                      <div className="card">
                       <h1>18</h1>
                       <p>Gruppen</p>
                       </div>
@@ -45,9 +46,13 @@ export default function Home() {
 
               </div>
               <div className="bottom-btn">
-                  <button>
-                      Daten Veroffentlichen
-                  </button>
+                <Link href='/login'>
+                  <a>
+                      <button>
+                        Daten Veröffentlichen
+                      </button>
+                  </a>
+                </Link>
               </div>
       </main>
 
