@@ -3,10 +3,7 @@ import Link from 'next/Link'
 
 export default function Home() {
 
-    const login = () => {
-        console.log("a")
-        window.open("/login","_self");
-    }
+    
   return (
     <div className="container">
       <Head>

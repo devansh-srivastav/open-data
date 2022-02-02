@@ -22,6 +22,7 @@ export default function Home() {
             ...prevState,
             [name]: value
         }));
+
     };
 
     const submit = () => {

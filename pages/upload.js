@@ -1,29 +1,8 @@
 import Head from 'next/head';
-import { useState } from 'react'
+import Link from 'next/link';
 
 export default function Home() {
 
-    
-
-    const [query, setQuery] = useState({
-        name: "",
-        email: "",
-        org:""
-    });
-
-    
-    const handleChange = () => (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        setQuery((prevState) => ({
-            ...prevState,
-            [name]: value
-        }));
-    };
-
-    const submit = () => {
-        console.log(query);
-    }
     return (
         <div className="container">
             <Head>
@@ -32,24 +11,36 @@ export default function Home() {
             </Head>
             <main>
                 <div className="screen">
-                    <div className="screen-title">
-                        Login
-                    </div>
+                   
                     <div className="login-detail">
-                        Bitte Loggen eie eich ein, um daten hochzuladen
+                        Auf welche Weise mochten Sie Ihre Daten zur Verfugung stellen?
                     </div>
 
-                    <form className="login-form">
-                        <input placeholder="Name" value={query.name} name="name" onChange={handleChange()}/>
-                        <input placeholder="Email-Adresse" type="email" value={query.email} name="email" onChange={handleChange()}/>
-                        <input placeholder="Organisation(und Abteilung)" value={query.org} name="org" onChange={handleChange()}/>
-                        <div className="bottom-btn">
-                            <button  type="button" onClick={() => submit()}>
-                                Einloggen
-                            </button>
+                    <div className="upload-grid">
+                        <div className="card-grid">
+                            <Link href="/upload-data">
+                                <div className="cards">
+                                <h4>Daten hochladen</h4>
+                                <p>Alle Dateiformate</p>
+                                </div>
+                            </Link>
+
+                            <Link href="/upload-link-data">
+                            <div className="cards">
+                                <h4>Link hochladen</h4>
+                                <p>URL</p>
+                                </div>
+                            </Link>
+
+                            <Link href="/upload-meta-data">
+                            <div className="cards">
+                                <h4>Meta-Daten hochladen</h4>
+                                <p>RDF-Datei</p>
+                                </div>
+                             </Link>
                         </div>
 
-                    </form>
+                    </div>
 
                     <div className="login-detail">
                         Bitte kontaktieren Sie das Bayrische Staatsministerium fur Digitales, um sich zu registrieren

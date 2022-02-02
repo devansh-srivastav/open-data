@@ -1,0 +1,104 @@
+.upload-grid {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: white;
+    max-width: 800px;
+    min-width: 100%;
+    flex-direction: column;
+    min-height: 200px;
+    text-align: center;
+}
+
+    .upload-grid .cards {
+        width:100%;
+        margin:30px;
+        background-color: #F2F2F2;
+        height:200px;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+    }
+
+.data-form{
+    width:100%
+} 
+
+.bottom-btn .white{
+
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin: 25px;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+    .row input {
+        width: 100%;
+        background: #F2F2F2;
+        padding:5px;
+        border:none;
+    }
+
+    .row select, .row textarea {
+        width: 100%;
+        background: #F2F2F2;
+        padding: 5px;
+        border: none;
+    }
+
+    .row .field {
+        min-width: 150px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 15px;
+    }
+
+    .row.center {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        margin: 25px;
+        justify-content: center;
+        text-align: center;
+    }
+
+.white-btn {
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+    .black-btn {
+        padding: 10px 20px;
+        background-color:black;
+        color:white;
+        margin:10px;
+    }
+
+    button{
+        cursor:pointer
+    }
+
+@media(max-width:700px){
+   .upload-grid .grid-card{
+        flex-direction:column;
+        align-items:center;
+   }
+
+    .row {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 25px;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    .row select, .row textarea, .row input{
+        margin-top:10px;
+    }
+}
