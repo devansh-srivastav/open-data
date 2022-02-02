@@ -7,7 +7,7 @@ export default function Dashboard() {
                     Willkommen auf Ihrem Dashboard
                 </h3>
                 <div className="bottom-btn">
-                    <Link href='/login'>
+                    <Link href='/upload'>
                         <a>
                             <button>
                                 Daten Veröffentlichen
