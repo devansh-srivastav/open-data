@@ -10,49 +10,52 @@ export default function Home() {
         <title>Open Data Bayern</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
-      <main>
-       
 
-         <div className="screen">
+      <main>
+
+
+        <div className="screen">
           <h3 className="">
-                      Daten aus Bayern
+            Daten aus Bayern
           </h3>
 
-         </div>
+        </div>
 
-              <div className="grid">
-                  <h3> Open Data Portal Statistik</h3>
-                  <div className="card-grid">
-                  <div className="card">
-                      <h1>92</h1>
-                      <p>Datasets</p>
-                      </div>
+        <div className="grid">
+          <h3> Open Data Portal Statistik</h3>
+          <div className="card-grid">
+            <div className="card">
+              <h1>92</h1>
+              <p>Datensätze</p>
+            </div>
 
-                      <div className="card">
-                      <h1>25</h1>
-                      <p>Organizationen</p>
-                      </div>
+            <div className="card">
+              <h1>25</h1>
+              <p>Organisationen</p>
+            </div>
 
-                      <div className="card">
-                      <h1>18</h1>
-                      <p>Gruppen</p>
-                      </div>
-                      </div>
+            <div className="card">
+              <h1>18</h1>
+              <p>Kategorien</p>
+            </div>
+          </div>
 
-              </div>
-              <div className="bottom-btn">
-                <Link href='/login'>
-                  <a>
-                      <button>
-                        Daten Veröffentlichen
-                      </button>
-                  </a>
-                </Link>
-              </div>
+        </div>
+        <div className="bottom-btn">
+
+          <button>
+            <Link href='/login'>
+              <a>
+                Daten Veröffentlichen
+              </a>
+            </Link>
+          </button>
+
+
+        </div>
       </main>
 
-          <style jsx>{`
+      <style jsx>{`
 
         
       `}</style>

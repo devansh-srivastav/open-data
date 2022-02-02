@@ -7,7 +7,7 @@ export default function Dashboard() {
                     Willkommen auf Ihrem Dashboard
                 </h3>
                 <div className="bottom-btn">
-                    <Link href='/login'>
+                    <Link href='/upload'>
                         <a>
                             <button>
                                 Daten Veröffentlichen
@@ -17,14 +17,11 @@ export default function Dashboard() {
                 </div>
 
             </div>
-            <div className="grid">
-                
-                <div className="card-grid">
-                    <div className="card">
-                        <h1>Ihre hochgeladenen Datensätze werden hier zu sehen sein.</h1>
-                </div>
 
-            </div>
-        </div>
+                
+                
+                        <h1>Nach der Bearbeitung erscheinen Ihre Daten auf dieser Seite und sind auch für andere Nutzer auf der Startseite.</h1>
+          
+
         </div>)
     }

@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-
+import Link from 'next/Link'
 
 export default function Header() {
 
@@ -14,12 +14,20 @@ export default function Header() {
         <div className="header-containers">
             <header className="header">
                 <div className="header-div">
-                    <div> <strong>Open Data Platform Bayern</strong></div>
+                    <Link href='/'><a><div> <strong>⚫ Open Data Platform Bayern</strong></div></a></Link>
+                    
                     <div>
-                        {path=='/' && <button onClick={() => login()} className="button">
+                        {/* {path=='/' && <button onClick={() => login()} className="button">
                             <h3>Einloggen</h3>
                         </button>
-                        }
+                        } */}
+                        <button className="button">
+                            <Link href='/login'>
+                                <a>
+                                    <h3>Einloggen</h3>
+                                </a>
+                            </Link>
+                        </button>
                     </div>
                 </div>
             </header>
