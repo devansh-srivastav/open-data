@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { useState } from 'react'
+import Link from 'next/Link'
 
 export default function Home() {
 
@@ -47,11 +48,17 @@ export default function Home() {
                         <input placeholder="Email-Adresse" type="email" value={query.email} name="email" onChange={handleChange()}/>
                         <input placeholder="Organisation(und Abteilung)" value={query.org} name="org" onChange={handleChange()}/>
                         <div className="bottom-btn">
-                            <button  type="button" onClick={() => submit()}>
-                                Einloggen
-                            </button>
-                        </div>
 
+                            <button type>
+                                <Link href='/dashboard'>
+                                    <a>
+                                        Einloggen
+                                    </a>
+                                </Link>
+                            </button>
+
+
+                        </div>
                     </form>
 
                     <div className="login-detail">
