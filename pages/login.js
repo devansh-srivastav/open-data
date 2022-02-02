@@ -1,11 +1,11 @@
 import Head from 'next/head';
-import { useState } from 'react'
-import Link from 'next/Link'
+import { useState } from 'react';
+import Link from 'next/Link';
+import { useRouter } from 'next/router'
 
 export default function Home() {
-
+    const router = useRouter();
     const login = () => {
-        console.log("a")
         window.open("/login", "_self");
     }
 
@@ -26,9 +26,22 @@ export default function Home() {
 
     };
 
-    const submit = () => {
-        console.log(query);
+    const [isRed, setRed] = useState(false);
+    const submit = ()=>(e) => {
+        
+        if (query.name != "" && query.email != "" && query.org != "") {
+            setRed(false);
+            localStorage.setItem("email", query.email);
+            localStorage.setItem("name", query.name);
+            localStorage.setItem("org", query.org);
+            router.push("/dashboard");
+        }
+        else {
+            setRed(true);
+            e.preventDefault();
+        }
     }
+
     return (
         <div className="container">
             <Head>
@@ -45,25 +58,21 @@ export default function Home() {
                     </div>
 
                     <form className="login-form">
-                        <input placeholder="Name" value={query.name} name="name" onChange={handleChange()}/>
-                        <input placeholder="Email-Adresse" type="email" value={query.email} name="email" onChange={handleChange()}/>
-                        <input placeholder="Organisation(und Abteilung)" value={query.org} name="org" onChange={handleChange()}/>
+                        <input placeholder="Name" value={query.name} name="name" className={isRed && query.name==""?"red-border":""} onChange={handleChange()}/>
+                        <input placeholder="Email-Adresse" type="email" className={isRed && query.email == "" ? "red-border" : ""} value={query.email} name="email" onChange={handleChange()}/>
+                        <input placeholder="Organisation(und Abteilung)" className={isRed && query.org == "" ? "red-border" : ""} value={query.org} name="org" onChange={handleChange()}/>
                         <div className="bottom-btn">
 
-                            <button type>
-                                <Link href='/dashboard'>
-                                    <a>
-                                        Einloggen
-                                    </a>
-                                </Link>
+                            <button type="button" onClick={submit()}>
+                                Einloggen
                             </button>
 
 
                         </div>
                     </form>
 
-                    <div className="login-detail">
-                        Bitte kontaktieren Sie das Bayrische Staatsministerium fur Digitales, um sich zu registrieren
+                    <div className="login-detail full-center">
+                        Bitte <a href="mailto: olga.popova@dpschool.io">Kontaktieren</a> Sie das Bayrische Staatsministerium fur Digitales, um sich zu registrieren
                     </div>
 
                 </div>

@@ -1,9 +1,8 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-
+import Link from 'next/Link'
 
 export default function Popup(props) {
-   console.log(props)
    return (
        <div className="popup-outer relative">
            
@@ -21,10 +20,11 @@ export default function Popup(props) {
                    Sind Sie sicher,dass Sie zuruckgehen wollen?<br /> Die eingegebenen Daten wurden noch nicht<br />hochgeladen und konnten verloren gehen.
                </div>
                <div className="row center">
-                   
-                   <button type="button" className="black-btn" onClick={() => props.finalSubmit()}>
+                  <Link href="/upload"> 
+                   <button type="button" className="black-btn" >
                        Vorgang abbrechen
                    </button>
+               </Link>
                </div>
            </div>
            

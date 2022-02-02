@@ -152,9 +152,45 @@ code {
     height: 1em;
 }
 
+.full-w{
+    width:100%;
+    padding:30px;
+}
+
 @media (max-width: 600px) {
     .grid {
         width: 100%;
         flex-direction: column;
     }
+}
+
+hr{
+    color:black;
+    border:5px solid black;
+    border-bottom:0px;
+    border-right:0px;
+    border-left:0px;
+    width:100%;
+}
+
+.upload-container h4{
+    margin: 0px 5px;
+}
+
+.upload-container .row.center{
+    align-items:flex-end;
+}
+
+.full-center {
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.full-center svg{
+    margin:5px;
+}
+
+.full-center a {
+        text-decoration:underline;
+        margin-right:3px;
 }

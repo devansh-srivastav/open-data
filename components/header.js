@@ -21,13 +21,24 @@ export default function Header() {
                             <h3>Einloggen</h3>
                         </button>
                         } */}
-                        <button className="button">
+                        {path == '/' && <button className="button">
                             <Link href='/login'>
                                 <a>
                                     <h3>Einloggen</h3>
                                 </a>
                             </Link>
                         </button>
+                        }
+
+                        {path != '/' && path!='/login' && <button className="button">
+                            <Link href='/'>
+                                <a>
+                                    <h3>Ausloggen</h3>
+                                </a>
+                            </Link>
+                        </button>
+                        }
+
                     </div>
                 </div>
             </header>
@@ -41,7 +52,7 @@ export default function Header() {
         }
         .header{
                 height:80px;
-                padding:10px  20px;
+                padding:10px  10%;
                 background-color:#F2F2F2;
                 width:100%;
                
