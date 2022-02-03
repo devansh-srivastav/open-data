@@ -61,12 +61,12 @@ export default function Uploadmetadata() {
 
                 {!loading && <div className="screen">
                     <div className="screen-title">
-                        Datei hochladen*
+                        <strong>Meta-dada hochladen</strong>
                     </div>
 
                     <form className="data-form">
                         <div className="row">
-                            <span className="field">Datei hochladen</span>
+                            <span className="field">RDF-Datei hochladen*</span>
                             <input placeholder="Datei auswahlen" type="file" className={isRed && query.file == "" ? "red-border" : ""} name="file" onChange={handleFileChange()} />
                         </div>
 
@@ -76,7 +76,7 @@ export default function Uploadmetadata() {
                         </div>
                         <div className="row center">
                             <button type="button" className="white-btn" onClick={() => openPopup(true)}>
-                                Zuruck
+                                Zurück
                             </button>
 
                             <button type="button" className="black-btn" onClick={() => submit()}>

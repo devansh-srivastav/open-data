@@ -3,18 +3,19 @@ export default function Dashboard() {
     return (
         <div className="container">
             <div className="screen">
-                <div className="row center full-w">
+                <div className="">
                 <h1 className="">
-                        Millkommen auf Ihrem Dashboard
+                        Willkommen auf Ihrem Dashboard
                 </h1>
                    
                 </div>
                 <hr/>
+                <br /><br /><br />
                 
                 <div className="row center">
                     <h4>
-                        Aktuell haben Sie noch keine Daten veroffentlicht. <br/><br/>
-                        Sobald Sie Daten veroffentlicht haben werden diese nach einer Uberprufungszeit hier und auf der Startseite sichtbar sein.
+                        Aktuell haben Sie noch keine Daten veröffentlicht. <br/><br/>
+                        Sobald Sie Daten veröffentlicht haben werden diese nach einer Überprüfungszeit hier und auf der Startseite sichtbar sein.
                     </h4>
                 </div>
                 <div className="row center full-w">

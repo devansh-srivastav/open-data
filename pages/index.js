@@ -46,7 +46,7 @@ export default function Home() {
           <button>
             <Link href='/login'>
               <a>
-                Daten Veröffentlichen
+                Daten veröffentlichen
               </a>
             </Link>
           </button>

@@ -54,7 +54,7 @@ export default function Home() {
                         Login
                     </div>
                     <div className="login-detail">
-                        Bitte Loggen eie eich ein, um daten hochzuladen
+                        Bitte loggen Sie sich ein, um daten hochzuladen.
                     </div>
 
                     <form className="login-form">
@@ -72,7 +72,7 @@ export default function Home() {
                     </form>
 
                     <div className="login-detail full-center">
-                        Bitte <a href="mailto: olga.popova@dpschool.io">Kontaktieren</a> Sie das Bayrische Staatsministerium fur Digitales, um sich zu registrieren
+                        Bitte <a href="mailto: olga.popova@dpschool.io">Kontaktieren</a> Sie das Bayrische Staatsministerium für Digitales, um sich zu registrieren
                     </div>
 
                 </div>

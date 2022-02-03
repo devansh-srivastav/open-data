@@ -8,8 +8,8 @@ import Loader from '../components/loading';
 export default function Uploaddata() {
 
 
-    const categories = ["Bevolkerung und Gesellschaft", "Bevolkerung und Gesellschaft", "Bildung, Kultur und Sport", "Energie", "Gesundheit", "Justiz, Rechtssystem und affentliche Sicherheit",
-        "Landwirtschaft", "Regierung und affentlicher Sektor", "Regionen und udte", "Umwelt", "Verkehr", "Wirtschaft und Finanzen", "Wissenschaft und Technologie", "Andere"
+    const categories = ["Bevölkerung und Gesellschaft", "Bildung, Kultur und Sport", "Energie", "Gesundheit", "Justiz, Rechtssystem und öffentliche Sicherheit",
+        "Landwirtschaft", "Regierung und öffentlicher Sektor", "Regionen und Städte", "Umwelt", "Verkehr", "Wirtschaft und Finanzen", "Wissenschaft und Technologie", "Andere"
     ];
     const licences = ["Datenlizenz Deutschland Namensnennung 2.0",
         "Datenlizenz Deutschland - Zero - Version 2.0",
@@ -17,9 +17,9 @@ export default function Uploaddata() {
         "Creative Commons Namensnennung(CC - BY)",
         "Public Domain Mark 1.0(PDM)",
         "Creative Commons Namensnennung 3.0 Deutschland(CC BY 3.0 DE)",
-        "Nutzungsbestimmungen f&#228;r die Bereitstellung von Geodaten des Bundes",
+        "Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes",
         "Creative Commons CC Zero License(cc - zero)",
-        "Amtliches Werk, lizenzfrei nach &#228;5 Abs. 1 UrhG", "Andere"];
+        "Amtliches Werk, lizenzfrei nach §5 Abs. 1 UrhG", "Andere"];
 
 
     const [query, setQuery] = useState({
@@ -84,13 +84,13 @@ export default function Uploaddata() {
 
                 {!loading && <div className="screen">
                     <div className="screen-title">
-                        Datei hochladen*
+                        <strong>Datei hochladen</strong>
                     </div>
 
                     <form className="data-form">
                         <div className="row">
-                            <span className="field">Datei hochladen</span>
-                            <input placeholder="Datei auswahlen" type="file" className={isRed && query.file == "" ? "red-border" : ""} name="file" onChange={handleFileChange()} />
+                            <span className="field">Datei hochladen*</span>
+                            <input placeholder="Datei auswählen" type="file" className={isRed && query.file == "" ? "red-border" : ""} name="file" onChange={handleFileChange()} />
                         </div>
                         <div className="row">
                             <span className="field">Titel</span>
@@ -102,7 +102,7 @@ export default function Uploaddata() {
                         </div>
                         <div className="row">
                             <span className="field">Keywords</span>
-                            <input placeholder="Schlusselworter, um Ihren Datensatz in der Suche auffindbar zu machen" type="text" value={query.keys} name="keys" onChange={handleChange()} />
+                            <input placeholder="Schlüsselwörter, um Ihren Datensatz in der Suche auffindbar zu machen" type="text" value={query.keys} name="keys" onChange={handleChange()} />
                         </div>
                         <div className="row">
                             <span className="field">Kategorie</span>
@@ -135,7 +135,7 @@ export default function Uploaddata() {
                         </div>
                         <div className="row center">
                             <button type="button" className="white-btn" onClick={() => openPopup(true)}>
-                                Zuruck
+                                Zurück
                             </button>
 
                             <button type="button" className="black-btn" onClick={() => submit()}>

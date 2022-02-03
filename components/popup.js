@@ -13,11 +13,11 @@ export default function Popup(props) {
                    </svg>
                </div>
                <div className="login-details">
-                   Zuruk
+                   Zurück
                 </div>
                
                <div>
-                   Sind Sie sicher,dass Sie zuruckgehen wollen?<br /> Die eingegebenen Daten wurden noch nicht<br />hochgeladen und konnten verloren gehen.
+                   Sind Sie sicher, dass Sie zurück gehen wollen?<br />Die eingegebenen Daten wurden noch nicht<br />hochgeladen und könnten verloren gehen.
                </div>
                <div className="row center">
                   <Link href="/upload"> 
