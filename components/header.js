@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import Link from 'next/Link'
+import Link from 'next/link'
 
 export default function Header() {
 
