@@ -29,9 +29,13 @@ export default function Uploaddata() {
         file: "",
         category: "Bevolkerung und Gesellschaft",
         license: "Creative Commons",
-        comment:""
+        comment: "",
     });
-
+    const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
+    const [org, setOrg] = useState("");
+    const [fileUrl, setFile] = useState("");
+    const [size, setSize] = useState("");
     const [isRed, setRed] = useState(false);
     const [popupcontent, setContent] = useState("Sind Sie sicher, dass Sie zuruckgehen wollen? Die eingegebenen Daten werden nicht gespeichert.");
     const [popup, openPopup] = useState(false);
@@ -51,27 +55,69 @@ export default function Uploaddata() {
             ...prevState,
             file: e.target.files[0]
         }));
+        setEmail(localStorage.getItem("email"));
+        setName(localStorage.getItem("name"));
+        setOrg(localStorage.getItem("org"));
+        setFile(localStorage.getItem("email")+"_"+e.target.files[0].name);
+        setSize(e.target.files[0].size/1048576);
     };
-
-    const submit = () => {
+    const router = useRouter();
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwITNaAxw3PgsLYZJ7Fn1oJ2XnPb09BNxo48x1ZCGc5LAdkNmaNt357u9NpR2tmvposbw/exec'
+    
+    const submit = (e) => {
+        e.preventDefault();
         if (query.file == "") {
             setRed(true);
         }
         else {
-            finalSubmit();
+            const fileURL = "https://script.google.com/macros/s/AKfycbyYK1-4DkIFQ1Ip4qsieUYVnFvNSPgpGEJkndmaG194BLN9JKlVZDzSL99pDpzEuS2TvA/exec"
+            
+            setupload(true);
+            let form = document.forms['file upload']
+            let form2 = document.forms['dummy upload']
+            const file = form.file.files[0];
+            form = document.forms['file upload'];
+            console.log(file.size)
+            if (file.size < 50 * 1048576) {
+                const fr = new FileReader();
+                fr.readAsArrayBuffer(file);
+                fr.onload = f => {
+                    let newName =email + "_" + file.name;
+                    const orgName = file.name;
+                    if (orgName.includes(".")) {
+                        const orgExt = orgName.split(".").pop();
+                        if (orgExt != newName.split(".").pop()) {
+                            newName = newName ? `${newName}.${orgExt}` : orgName;
+                        }
+                    }
+                    const qs = new URLSearchParams({ filename: newName, mimeType: file.type });  // Modified
+
+
+                    fetch(`${fileURL}?${qs}`, { method: "POST", body: JSON.stringify([...new Int8Array(f.target.result)]), mode: 'no-cors', headers: { cookie: 'ip2loc=isset' } })
+                        .then(res => res.json)
+                        .then(e => {
+                            // setFile(e != undefined ? e.fileUrl : "")
+                            fetch(scriptURL, { method: 'POST', body: new FormData(form2) })
+                                .then(response => router.push("/success"))
+                                .catch(error => router.push("/error"))
+                        }
+                        )  // <--- You can retrieve the returned value here.
+                        .catch(err => {
+                            router.push("/error")
+                        });
+
+
+                }
+            }
+            else {
+                fetch(scriptURL, { method: 'POST', body: new FormData(form2) })
+                    .then(response => router.push("/success"))
+                    .catch(error => router.push("/error"))
+            }
         }
     }
 
-    const router = useRouter();
-    const finalSubmit = () => {
-        setupload(true);
-
-        setTimeout(() => {
-            router.push("/success");
-        }, 5000)
-        
-    }
-
+    
     return (
         <div className="upload-container container">
             <Head>
@@ -87,10 +133,15 @@ export default function Uploaddata() {
                         <strong>Datei hochladen</strong>
                     </div>
 
-                    <form className="data-form">
+                    <form className="data-form" name="file upload" method="post" autoComplete="off">
+                        <input type="email" value={email} name="email" hidden onChange={() => { } }/>
+                        <input type="text" value={name} name="name" hidden onChange={() => { } }/>
+                        <input type="text" value={org} name="org" hidden onChange={() => { }} />
+                        <input type="text" value={size} name="size" hidden onChange={() => { }} />
+                        <input type="text" value={fileUrl} name="fileUrl" hidden onChange={() => { }} />
                         <div className="row">
                             <span className="field">Datei hochladen*</span>
-                            <input placeholder="Datei auswählen" type="file" className={isRed && query.file == "" ? "red-border" : ""} name="file" onChange={handleFileChange()} />
+                            <input placeholder="Datei auswahlen" type="file" className={isRed && query.file == "" ? "red-border" : ""} name="file" onChange={handleFileChange()} />
                         </div>
                         <div className="row">
                             <span className="field">Titel</span>
@@ -131,18 +182,58 @@ export default function Uploaddata() {
                         </div>
                         <div className="row">
                             <span className="field">Kommentar</span>
-                            <textarea placeholder="Hinterlassen Sie Kommentare zu diesem Datensatz" rows="5" type="text" value={query.desc} name="desc" onChange={handleChange()} />
+                            <textarea placeholder="Hinterlassen Sie Kommentare zu diesem Datensatz" rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />
                         </div>
                         <div className="row center">
-                            <button type="button" className="white-btn" onClick={() => openPopup(true)}>
+                            <button type="button" name="submits" className="white-btn" onClick={() => openPopup(true)}>
                                 Zurück
                             </button>
 
-                            <button type="button" className="black-btn" onClick={() => submit()}>
+                            <button className="black-btn" type="submit" value="submit" name="submit" onClick={(e) => submit(e)}>
                                 Weiter
                              </button>
                         </div>
 
+                    </form>
+
+                    <form className="data-form" name="dummy upload" method="post" autoComplete="off" hidden>
+                        <input type="email" value={email} name="email" hidden onChange={() => { }} />
+                        <input type="text" value={name} name="name" hidden onChange={() => { }} />
+                        <input type="text" value={org} name="org" hidden onChange={() => { }} />
+                        <input type="text" value={size} name="size" hidden onChange={() => { }} />
+                        <input type="text" value={fileUrl} name="fileUrl" hidden onChange={() => { }} />
+                        <input placeholder="Datei auswahlen" type="file" className={isRed && query.file == "" ? "red-border" : ""} name="file" onChange={handleFileChange()} />
+                        
+                       <textarea placeholder="Kurze Beschreibung der hochgeladenen Daten" rows="5" type="text" value={query.desc} name="desc" onChange={handleChange()} />
+                        <input placeholder="Schlüsselwörter, um Ihren Datensatz in der Suche auffindbar zu machen" type="text" value={query.keys} name="keys" onChange={handleChange()} />
+                        <select name="category" default-value={query.category} value={query.category} onChange={handleChange()}  >
+                                {
+                                    categories.map(function (value, index) {
+                                        return (
+                                            <option value={value} key={"cate" + index}>{value}</option>
+                                        )
+                                    })
+                                }
+                            </select>
+                        <select name="license" value={query.license} onChange={handleChange()}  >
+                                {
+                                    licences.map(function (value, index) {
+                                        return (
+                                            <option value={value} key={"cate" + index}>{value}</option>
+                                        )
+                                    })
+                                }
+                            </select>
+
+                       <textarea placeholder="Hinterlassen Sie Kommentare zu diesem Datensatz" rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />
+                        <button type="button" name="submits" className="white-btn" onClick={() => openPopup(true)}>
+                                Zurück
+                            </button>
+
+                            <button className="black-btn" type="submit" value="submit" name="submit" onClick={(e) => submit(e)}>
+                                Weiter
+                             </button>
+                      
                     </form>
 
 

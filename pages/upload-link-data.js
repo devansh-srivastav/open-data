@@ -33,6 +33,9 @@ export default function Uploadlinkdata() {
         "Creative Commons CC Zero License(cc - zero)",
         "Amtliches Werk, lizenzfrei nach §5 Abs. 1 UrhG", "Andere"];
         
+    const [email, setEmail] = useState("");
+    const [name, setName] = useState("");
+    const [org, setOrg] = useState("");
 
     const [isRed, setRed] = useState(false);
     const [popupcontent,setContent] = useState("Sind Sie sicher, dass Sie zuruckgehen wollen? Die eingegebenen Daten werden nicht gespeichert.");
@@ -44,21 +47,28 @@ export default function Uploadlinkdata() {
             ...prevState,
             [name]: value
         }));
+        if (email == "") {
+            setEmail(localStorage.getItem("email"));
+            setName(localStorage.getItem("name"));
+            setOrg(localStorage.getItem("org"));
+
+        }
     };
 
-    const handleFileChange = () => (e) => {
-        setQuery((prevState) => ({
-            ...prevState,
-            file: e.target.files[0]
-        }));
-    };
-
-    const submit = () => {
+  
+    const submit = (e) => {
+        e.preventDefault();
         if (query.url == "") {
             setRed(true);
         }
         else {
-            finalSubmit();
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbw4gMBJnUjgqdi2Ynyu1XBQ57D0i_dTVwtTH16cADUFS7cTP6AA6rv1WwhLIyjcL3fX/exec'
+            const form = document.forms['url upload']
+            setupload(true);
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => router.push("/success"))
+                .catch(error => router.push("/error"));
         }
     }
 
@@ -88,10 +98,14 @@ export default function Uploadlinkdata() {
                         <div className="screen-title">
                             <strong>Link zur Verfügung stellen</strong>
                     </div>
-                        <form className="data-form">
+                    <form className="data-form" name="url upload" method="post" autoComplete="off">
+                        <input type="email" value={email} name="email" hidden onChange={() => { }} />
+                        <input type="text" value={name} name="name" hidden onChange={() => { }} />
+                        <input type="text" value={org} name="org" hidden onChange={() => { }} />
+
                             <div className="row">
                                 <span className="field">Resource-URL*</span>
-                                <input placeholder="Link zur Quell-Datei" className={isRed && query.url == "" ? "red-border" : ""} type="text" name="url" onChange={handleChange()} />
+                            <input placeholder="Link zur Quell-Datei" value={query.url} className={isRed && query.url == "" ? "red-border" : ""} type="text" name="url" onChange={handleChange()} />
                             </div>
                             <div className="row">
                                 <span className="field">Titel</span>
@@ -132,14 +146,14 @@ export default function Uploadlinkdata() {
                             </div>
                             <div className="row">
                                 <span className="field">Kommentar</span>
-                                <textarea placeholder="Hinterlassen Sie Kommentare zu diesem Datensatz" rows="5" cols="60" type="text" value={query.desc} name="desc" onChange={handleChange()} />
+                                <textarea placeholder="Hinterlassen Sie Kommentare zu diesem Datensatz" rows="5" cols="60" type="text" value={query.comment} name="comment" onChange={handleChange()} />
                             </div>
                             <div className="row center">
-                                <button type="button" className="white-btn" onClick={() => cancel()}>
+                            <button type="button" name="submits" className="white-btn" onClick={() => cancel()}>
                                     Zurück
                             </button>
 
-                                <button type="button" className="black-btn" onClick={() => submit()}>
+                            <button className="black-btn" type="submit" value="submit" name="submit" onClick={(e) => submit(e)}>
                                     Weiter
                              </button>
                             </div>

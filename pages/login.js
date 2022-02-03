@@ -28,13 +28,22 @@ export default function Home() {
 
     const [isRed, setRed] = useState(false);
     const submit = ()=>(e) => {
-        
+        e.preventDefault();
         if (query.name != "" && query.email != "" && query.org != "") {
             setRed(false);
             localStorage.setItem("email", query.email);
             localStorage.setItem("name", query.name);
             localStorage.setItem("org", query.org);
-            router.push("/dashboard");
+
+
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwbLxUpNtBPKSNKg1Rh7OOcyiZKMFbFP49Y--RWhOXBLT3UyzK4ata_mka19mtuaS2K/exec'
+            const form = document.forms['open data']
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => router.push("/dashboard"))
+                .catch(error => console.error('Error!', error.message));
+          
+        
         }
         else {
             setRed(true);
@@ -57,13 +66,13 @@ export default function Home() {
                         Bitte loggen Sie sich ein, um daten hochzuladen.
                     </div>
 
-                    <form className="login-form">
+                    <form className="login-form" name="open data" method="post" autoComplete="off">
                         <input placeholder="Name" value={query.name} name="name" className={isRed && query.name==""?"red-border":""} onChange={handleChange()}/>
                         <input placeholder="Email-Adresse" type="email" className={isRed && query.email == "" ? "red-border" : ""} value={query.email} name="email" onChange={handleChange()}/>
                         <input placeholder="Organisation(und Abteilung)" className={isRed && query.org == "" ? "red-border" : ""} value={query.org} name="org" onChange={handleChange()}/>
                         <div className="bottom-btn">
 
-                            <button type="button" onClick={submit()}>
+                            <button type="submit" value="submit" name="submit" onClick={submit()}>
                                 Einloggen
                             </button>
 
