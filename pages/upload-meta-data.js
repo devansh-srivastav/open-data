@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import Popup from '../components/popup';
-import Link from 'next/Link';
 import { useRouter } from 'next/router';
 import Loader from '../components/loading'
 

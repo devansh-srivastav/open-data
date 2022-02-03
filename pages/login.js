@@ -1,6 +1,5 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import Link from 'next/Link';
 import { useRouter } from 'next/router'
 
 export default function Home() {

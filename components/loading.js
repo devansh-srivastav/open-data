@@ -1,4 +1,3 @@
-import Link from 'next/Link'
 export default function Loading() {
     return (
               <div className="upload-container screen">
