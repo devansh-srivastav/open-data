@@ -54,7 +54,7 @@ export default function Uploaddata() {
     };
 
     const submit = () => {
-        if (query.url == "") {
+        if (query.file == "") {
             setRed(true);
         }
         else {
@@ -64,7 +64,7 @@ export default function Uploaddata() {
 
     const router = useRouter();
     const finalSubmit = () => {
-            setupload(true);
+        setupload(true);
 
         setTimeout(() => {
             router.push("/success");

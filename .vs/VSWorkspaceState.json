@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\components",
     "\\pages",
     "\\styles"
   ],
-  "SelectedNode": "\\pages\\login.js",
+  "SelectedNode": "\\pages\\error.js",
   "PreviewInSolutionExplorer": false
 }
