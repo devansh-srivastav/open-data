@@ -20,8 +20,8 @@ export default function Uploadlinkdata() {
 
     const [loading, setupload] = useState(false);
 
-    const categories = ["Bevolkerung und Gesellschaft", "Bevolkerung und Gesellschaft", "Bildung, Kultur und Sport", "Energie", "Gesundheit", "Justiz, Rechtssystem und affentliche Sicherheit",
-        "Landwirtschaft", "Regierung und affentlicher Sektor", "Regionen und udte", "Umwelt", "Verkehr", "Wirtschaft und Finanzen", "Wissenschaft und Technologie", "Andere"
+    const categories = ["Bevölkerung und Gesellschaft", "Bildung, Kultur und Sport", "Energie", "Gesundheit", "Justiz, Rechtssystem und öffentliche Sicherheit",
+        "Landwirtschaft", "Regierung und öffentlicher Sektor", "Regionen und Städte", "Umwelt", "Verkehr", "Wirtschaft und Finanzen", "Wissenschaft und Technologie", "Andere"
     ];
     const licences = ["Datenlizenz Deutschland Namensnennung 2.0",
         "Datenlizenz Deutschland - Zero - Version 2.0",
@@ -29,9 +29,9 @@ export default function Uploadlinkdata() {
         "Creative Commons Namensnennung(CC - BY)",
         "Public Domain Mark 1.0(PDM)",
         "Creative Commons Namensnennung 3.0 Deutschland(CC BY 3.0 DE)",
-        "Nutzungsbestimmungen f&#228;r die Bereitstellung von Geodaten des Bundes",
+        "Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes",
         "Creative Commons CC Zero License(cc - zero)",
-        "Amtliches Werk, lizenzfrei nach &#228;5 Abs. 1 UrhG", "Andere"];
+        "Amtliches Werk, lizenzfrei nach §5 Abs. 1 UrhG", "Andere"];
         
 
     const [isRed, setRed] = useState(false);
@@ -86,7 +86,7 @@ export default function Uploadlinkdata() {
                 {!loading &&
                     <div className="screen">
                         <div className="screen-title">
-                            Datei hochladen
+                            <strong>Link zur Verfügung stellen</strong>
                     </div>
                         <form className="data-form">
                             <div className="row">
@@ -136,7 +136,7 @@ export default function Uploadlinkdata() {
                             </div>
                             <div className="row center">
                                 <button type="button" className="white-btn" onClick={() => cancel()}>
-                                    Zuruck
+                                    Zurück
                             </button>
 
                                 <button type="button" className="black-btn" onClick={() => submit()}>

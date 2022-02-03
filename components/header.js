@@ -14,7 +14,9 @@ export default function Header() {
         <div className="header-containers">
             <header className="header">
                 <div className="header-div">
-                    <Link href='/'><a><div> <strong>⚫ Open Data Platform Bayern</strong></div></a></Link>
+                    {path == '/' && <Link href='/'><a><div> <strong>⚫ Open-Data Plattform Bayern</strong></div></a></Link>}
+                    {path == '/login' && <Link href='/'><a><div> <strong>⚫ Open-Data Plattform Bayern</strong></div></a></Link>}
+                    {path != '/' && path != '/login' && <Link href='/dashboard'><a><div> <strong>⚫ Open-Data Plattform Bayern</strong></div></a></Link>}
                     
                     <div>
                         {/* {path=='/' && <button onClick={() => login()} className="button">
@@ -24,7 +26,7 @@ export default function Header() {
                         {path == '/' && <button className="button">
                             <Link href='/login'>
                                 <a>
-                                    <h3>Einloggen</h3>
+                                    <h3>Einloggen &rarr;</h3>
                                 </a>
                             </Link>
                         </button>
@@ -33,7 +35,7 @@ export default function Header() {
                         {path != '/' && path!='/login' && <button className="button">
                             <Link href='/'>
                                 <a>
-                                    <h3>Ausloggen</h3>
+                                    <h3>Ausloggen  &rarr;</h3>
                                 </a>
                             </Link>
                         </button>
