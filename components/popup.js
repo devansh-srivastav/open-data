@@ -13,7 +13,7 @@ export default function Popup(props) {
                    </svg>
                </div>
                <div className="login-details">
-                   Zurück
+                   <strong>Zurück</strong>
                 </div>
                
                <div>
