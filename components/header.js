@@ -23,7 +23,7 @@ export default function Header() {
                             <h3>Einloggen</h3>
                         </button>
                         } */}
-                        {path == '/' && <button className="button">
+                        {path == '/' && <button type='button' className="button">
                             <Link href='/login'>
                                 <a>
                                     <h3>Einloggen &rarr;</h3>
@@ -32,7 +32,7 @@ export default function Header() {
                         </button>
                         }
 
-                        {path != '/' && path!='/login' && <button className="button">
+                        {path != '/' && path != '/login' && <button type='button' className="button">
                             <Link href='/'>
                                 <a>
                                     <h3>Ausloggen  &rarr;</h3>

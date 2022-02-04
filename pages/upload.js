@@ -19,24 +19,30 @@ export default function Home() {
                     <div className="upload-grid">
                         <div className="card-grid">
                             <Link href="/upload-data">
+                                <a>
                                 <div className="cards">
                                 <h4>Datei hochladen</h4>
                                 <p>Alle Dateiformate</p>
                                 </div>
+                                </a>
                             </Link>
 
                             <Link href="/upload-link-data">
+                            <a>
                             <div className="cards">
                                     <h4>Link zur Verfügung stellen</h4>
                                 <p>URL</p>
                                 </div>
+                                </a>
                             </Link>
 
                             <Link href="/upload-meta-data">
+                            <a>
                             <div className="cards">
                                 <h4>Meta-Data hochladen</h4>
                                 <p>RDF-Datei</p>
                                 </div>
+                                </a>
                              </Link>
                         </div>
 

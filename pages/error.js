@@ -25,7 +25,7 @@ export default function Error() {
                         <div className="row center ">
                             <Link href='/dashboard'>
                                 <a>
-                                    <button className="white-btn">
+                                    <button type='button' className="white-btn">
                                         Weiter zum Dashboard
                             </button>
                                 </a>
@@ -33,7 +33,7 @@ export default function Error() {
 
                             <Link href='/upload'>
                                 <a>
-                                    <button className="black-btn">
+                                    <button type='button' className="black-btn">
                                         Weitere Daten hochladen
                                     </button>
                                 </a>

@@ -12,15 +12,7 @@ export default function Uploadmetadata() {
     });
     const [isRed, setRed] = useState(false);
     const [popup, openPopup] = useState(false);
-    const handleChange = () => (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-        setQuery((prevState) => ({
-            ...prevState,
-            [name]: value
-        }));
-
-    };
+    
 
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
@@ -40,7 +32,15 @@ export default function Uploadmetadata() {
         setFile(localStorage.getItem("email")+"_"+e.target.files[0].name);
         setSize(e.target.files[0].size / 1048576);
     };
+    const handleChange = () => (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        setQuery((prevState) => ({
+            ...prevState,
+            [name]: value
+        }));
 
+    };
     const submit = (e) => {
         e.preventDefault();
         if (query.file == "") {
@@ -132,7 +132,7 @@ export default function Uploadmetadata() {
                             <textarea placeholder="Hinterlassen Sie Kommentare zu diesem Datensatz" rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />
                         </div>
                         <div className="row center">
-                            <button type="button" type="submit" value="submit" name="submits"  className="white-btn" onClick={() => openPopup(true)}>
+                            <button type="button" value="submit" name="submits"  className="white-btn" onClick={() => openPopup(true)}>
                                 Zurück
                             </button>
 

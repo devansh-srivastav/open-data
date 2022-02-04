@@ -21,9 +21,11 @@ export default function Popup(props) {
                </div>
                <div className="row center">
                   <Link href="/upload"> 
+                  <a>
                    <button type="button" className="black-btn" >
                        Vorgang abbrechen
                    </button>
+                       </a>
                </Link>
                </div>
            </div>

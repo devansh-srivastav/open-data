@@ -4,30 +4,30 @@ export default function Dashboard() {
         <div className="container">
             <div className="screen">
                 <div className="">
-                <h1 className="">
+                    <h1 className="">
                         Willkommen auf Ihrem Dashboard
-                </h1>
-                   
+                    </h1>
+
                 </div>
-                <hr/>
+                <hr />
                 <br /><br /><br />
-                
+
                 <div className="row center">
                     <h4>
-                        Aktuell haben Sie noch keine Daten veröffentlicht. <br/><br/>
+                        Aktuell haben Sie noch keine Daten veröffentlicht. <br /><br />
                         Sobald Sie Daten veröffentlicht haben werden diese nach einer Überprüfungszeit hier und auf der Startseite sichtbar sein.
                     </h4>
                 </div>
                 <div className="row center full-w">
 
-                <Link href='/upload'>
-                    <a>
-                        <button className="black-btn">
-                            Daten Veröffentlichen
+                    <Link href='/upload'>
+                        <a>
+                            <button type='button' className="black-btn">
+                                Daten Veröffentlichen
                             </button>
-                    </a>
+                        </a>
                     </Link>
                 </div>
             </div>
-</div>)
-    }
+        </div>)
+}
