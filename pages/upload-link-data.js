@@ -92,7 +92,7 @@ export default function Uploadlinkdata() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-                {popup && <Popup popup={popup} openpopup={openPopup} finalSubmit={finalSubmit} />}
+                {popup && <Popup popup={popup} openpopup={openPopup} />}
                 {!loading &&
                     <div className="screen">
                         <div className="screen-title">

@@ -1,8 +1,20 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import { useRouter } from 'next/router'
 
 export default function Home() {
-
+    const Router = useRouter();
+    const open = (type) => {
+        if (type == "data") {
+            Router.push("/upload-data");
+        }
+        else if (type == "link") {
+            Router.push("/upload-link-data");
+        }
+        else if (type == "meta") {
+            Router.push("/upload-meta-data");
+        }
+    }
     return (
         <div className="container">
             <Head>
@@ -18,32 +30,21 @@ export default function Home() {
 
                     <div className="upload-grid">
                         <div className="card-grid">
-                            <Link href="/upload-data">
-                                <a>
-                                <div className="cards">
+                            <div className="cards" onClick={() => {open("data")}}>
                                 <h4>Datei hochladen</h4>
                                 <p>Alle Dateiformate</p>
                                 </div>
-                                </a>
-                            </Link>
+                           
 
-                            <Link href="/upload-link-data">
-                            <a>
-                            <div className="cards">
+                             <div className="cards" onClick={() => { open("link") }}>
                                     <h4>Link zur Verfügung stellen</h4>
                                 <p>URL</p>
                                 </div>
-                                </a>
-                            </Link>
 
-                            <Link href="/upload-meta-data">
-                            <a>
-                            <div className="cards">
+                             <div className="cards" onClick={() => { open("meta") }}>
                                 <h4>Meta-Data hochladen</h4>
                                 <p>RDF-Datei</p>
                                 </div>
-                                </a>
-                             </Link>
                         </div>
 
                     </div>

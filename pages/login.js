@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import Image from "next/image"
 
 export default function Home() {
     const router = useRouter();
@@ -24,12 +25,14 @@ export default function Home() {
         }));
 
     };
-
+    const [loading, setupload] = useState(false);
     const [isRed, setRed] = useState(false);
-    const submit = ()=>(e) => {
+    const submit = () => (e) => {
         e.preventDefault();
         if (query.name != "" && query.email != "" && query.org != "") {
             setRed(false);
+            setupload(true);
+
             localStorage.setItem("email", query.email);
             localStorage.setItem("name", query.name);
             localStorage.setItem("org", query.org);
@@ -39,8 +42,8 @@ export default function Home() {
             const form = document.forms['open data']
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors', headers: { cookie: 'ip2loc=isset' } })
-                .then(response => router.push("/dashboard"))
-                .catch(error => console.error('Error!', error.message));
+                .then(response => { setupload(false); router.push("/dashboard") })
+                .catch(error => { setupload(false); window.alert("please retry") });
           
         
         }
@@ -59,8 +62,11 @@ export default function Home() {
             <main>
                 <div className="screen">
                     <div className="screen-title">
-                        Login
+                        <strong>  Login </strong>
                     </div>
+
+                   <div className="login-loader" style={loading ? { opacity: 1 } : { opacity: 0 }}> <Image src="/loader.gif" width="35" height="35" alt="" /></div>
+
                     <div className="login-detail">
                         Bitte loggen Sie sich ein, um daten hochzuladen.
                     </div>
