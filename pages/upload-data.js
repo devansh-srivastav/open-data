@@ -96,7 +96,7 @@ export default function Uploaddata() {
                         .then(res => res.json)
                         .then(e => {
                             // setFile(e != undefined ? e.fileUrl : "")
-                            fetch(scriptURL, { method: 'POST', body: new FormData(form2) })
+                            fetch(scriptURL, { method: 'POST', body: new FormData(form2), mode: 'no-cors', headers: { cookie: 'ip2loc=isset' } })
                                 .then(response => router.push("/success"))
                                 .catch(error => router.push("/error"))
                         }
@@ -109,7 +109,7 @@ export default function Uploaddata() {
                 }
             }
             else {
-                fetch(scriptURL, { method: 'POST', body: new FormData(form2) })
+                fetch(scriptURL, { method: 'POST', body: new FormData(form2), mode: 'no-cors', headers: { cookie: 'ip2loc=isset' } })
                     .then(response => router.push("/success"))
                     .catch(error => router.push("/error"))
             }
@@ -167,7 +167,7 @@ export default function Uploaddata() {
                             </select>
                         </div>
                         <div className="row">
-                            <span className="field">Lizens</span>
+                            <span className="field">Lizenz</span>
                             <select name="license" value={query.license} onChange={handleChange()}  >
                                 {
                                     licences.map(function (value, index) {

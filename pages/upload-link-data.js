@@ -66,7 +66,7 @@ export default function Uploadlinkdata() {
             const form = document.forms['url upload']
             setupload(true);
 
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors', headers: { cookie: 'ip2loc=isset' } })
                 .then(response => router.push("/success"))
                 .catch(error => router.push("/error"));
         }
@@ -132,7 +132,7 @@ export default function Uploadlinkdata() {
                                 </select>
                             </div>
                             <div className="row">
-                                <span className="field">Lizens</span>
+                                <span className="field">Lizenz</span>
                                 <select name="license" value={query.license} onChange={handleChange()}  >
                                     {
                                         licences.map(function (value, index) {

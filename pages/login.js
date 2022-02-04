@@ -38,7 +38,7 @@ export default function Home() {
             const scriptURL = 'https://script.google.com/macros/s/AKfycbwbLxUpNtBPKSNKg1Rh7OOcyiZKMFbFP49Y--RWhOXBLT3UyzK4ata_mka19mtuaS2K/exec'
             const form = document.forms['open data']
 
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors', headers: { cookie: 'ip2loc=isset' } })
                 .then(response => router.push("/dashboard"))
                 .catch(error => console.error('Error!', error.message));
           
