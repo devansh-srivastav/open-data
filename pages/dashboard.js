@@ -5,9 +5,9 @@ export default function Dashboard() {
             <main>
             <div className="screen">
                 <div className="">
-                    <h1 className="">
+                    <strong className="">
                         Willkommen auf Ihrem Dashboard
-                    </h1>
+                    </strong>
 
                 </div>
                 <hr />
@@ -26,7 +26,7 @@ export default function Dashboard() {
                     <Link href='/upload'>
                         <a>
                             <button type='button' className="black-btn">
-                                Daten Veröffentlichen
+                                    Daten veröffentlichen
                             </button>
                         </a>
                     </Link>
