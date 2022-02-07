@@ -46,6 +46,9 @@ export default function Uploadmetadata() {
         if (query.file == "") {
             setRed(true);
         }
+        else if (size > 50) {
+            setRed(true);
+        }
         else {
             const fileURL = "https://script.google.com/macros/s/AKfycbw9WhoBabZne9NsPem60x7aZXyS3IlVmmr71E69EcS8I6_GBUQXUKgiVyw-qwt5CTPb/exec"
 
@@ -122,11 +125,14 @@ export default function Uploadmetadata() {
                     </div>
 
                     <form className="data-form" name="file upload" method="post" autoComplete="off">
+                        
                         <div className="row">
                             <span className="field">RDF-Datei hochladen*</span>
-                            <input placeholder="Datei auswahlen" type="file" className={isRed && query.file == "" ? "red-border" : ""} name="file" onChange={handleFileChange()} />
+                            <div className="col">
+                                <input placeholder="Datei auswahlen" type="file" className={isRed && query.file == "" ? "red-border" : ""} name="file" onChange={handleFileChange()} />
+                                <span className={isRed && size > 50 ? "small-err red" : "small-err "}>die maximale Dateigröße beträgt 5 MB</span>
+                            </div>
                         </div>
-
                         <div className="row">
                             <span className="field">Kommentar</span>
                             <textarea placeholder="Hinterlassen Sie Kommentare zu diesem Datensatz" rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />

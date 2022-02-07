@@ -68,6 +68,10 @@ export default function Uploaddata() {
         if (query.file == "") {
             setRed(true);
         }
+        else if (size > 50)
+        {
+            setRed(true);
+        }
         else {
             const fileURL = "https://script.google.com/macros/s/AKfycbyYK1-4DkIFQ1Ip4qsieUYVnFvNSPgpGEJkndmaG194BLN9JKlVZDzSL99pDpzEuS2TvA/exec"
             
@@ -138,9 +142,13 @@ export default function Uploaddata() {
                         <input type="text" value={org} name="org" hidden onChange={() => { }} />
                         <input type="text" value={size} name="size" hidden onChange={() => { }} />
                         <input type="text" value={fileUrl} name="fileUrl" hidden onChange={() => { }} />
+                        
                         <div className="row">
                             <span className="field">Datei hochladen*</span>
-                            <input placeholder="Datei auswahlen" type="file" className={isRed && query.file == "" ? "red-border" : ""} name="file" onChange={handleFileChange()} />
+                            <div className="col">
+                                <input placeholder="Datei auswahlen" type="file" className={isRed && query.file == "" ? "red-border" : ""} name="file" onChange={handleFileChange()} />
+                                <span className={isRed && size > 50 ? "small-err red" : "small-err "}>die maximale Dateigröße beträgt 5 MB</span>
+                            </div>
                         </div>
                         <div className="row">
                             <span className="field">Titel</span>
