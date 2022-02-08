@@ -86,7 +86,7 @@ export default function Home() {
                     </form>
 
                     <div className="small-comment full-w full-center">
-                        Bitte <a href="mailto: olga.popova@dpschool.io">kontaktieren</a> Sie das Bayerische Staatsministerium für Digitales, um sich. <br/>zu registrieren
+                        Bitte <a href="mailto: olga.popova@dpschool.io">kontaktieren</a> Sie das Bayerische Staatsministerium für Digitales, um sich <br/>zu registrieren.
                     </div>
 
                 </div>
