@@ -13,10 +13,10 @@ export default function Popup(props) {
                    </svg>
                </div>
                <div className="login-details">
-                   <strong>Zurück</strong>
+                   <p className="s-22 bold">Zurück</p>
                 </div>
                
-               <div>
+               <div className="s-16">
                    Sind Sie sicher, dass Sie zurück gehen wollen?<br />Die eingegebenen Daten wurden noch nicht<br />hochgeladen und könnten verloren gehen.
                </div>
                <div className="full-w center pd0">

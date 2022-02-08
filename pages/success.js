@@ -18,7 +18,7 @@ export default function Success() {
                         <div className="full-w center">
                             <div>
                                 <h1>🚀</h1>
-                                <h3>Ihre Daten wurden erfolgreich hochgeladen und werden in Kürze auf Ihrem Dashboard und öffentlich auf der Plattform verfügbar sein.</h3>
+                                <p classname="s-16">Ihre Daten wurden erfolgreich hochgeladen und werden in Kürze auf <br/>Ihrem Dashboard und öffentlich auf der Plattform verfügbar sein.</p>
                             </div>
 
                         </div>

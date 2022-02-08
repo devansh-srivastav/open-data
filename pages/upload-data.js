@@ -68,13 +68,13 @@ export default function Uploaddata() {
         if (query.file == "" ||query.category=="" || query.desc=="" || query.keys=="" || query.license=="" || query.title=="") {
             setRed(true);
         }
-        else if (size > 50)
-        {
-            setRed(true);
-            fetch(scriptURL, { method: 'POST', body: new FormData(form2), mode: 'no-cors', headers: { cookie: 'ip2loc=isset' } })
-                .then(response => router.push("/success"))
-                .catch(error => router.push("/error"))
-        }
+        //else if (size > 50)
+        //{
+        //    setRed(true);
+        //    fetch(scriptURL, { method: 'POST', body: new FormData(form2), mode: 'no-cors', headers: { cookie: 'ip2loc=isset' } })
+        //        .then(response => router.push("/success"))
+        //        .catch(error => router.push("/error"))
+        //}
         else {
             const fileURL = "https://script.google.com/macros/s/AKfycbyYK1-4DkIFQ1Ip4qsieUYVnFvNSPgpGEJkndmaG194BLN9JKlVZDzSL99pDpzEuS2TvA/exec"
             
@@ -136,7 +136,7 @@ export default function Uploaddata() {
 
                 {!loading && <div className="screen">
                     <div className="screen-title">
-                        <strong>Datei hochladen</strong>
+                        <p className="s-22 bold">Datei hochladen</p>
                     </div>
 
                     <form className="data-form" name="file upload" method="post" autoComplete="off">
@@ -150,7 +150,7 @@ export default function Uploaddata() {
                             <span className="field">Datei hochladen*</span>
                             <div className="col">
                                 <input placeholder="Datei auswahlen" type="file" className={isRed && query.file == "" ? "red-border" : ""} name="file" onChange={handleFileChange()} />
-                                <span className={isRed && size > 50 ? "small-err red" : "small-err "}>Die maximale Dateigröße beträgt 50 MB</span>
+                                {/*<span className={isRed && size > 50 ? "small-err red" : "small-err "}>Die maximale Dateigröße beträgt 50 MB</span>*/}
                             </div>
                         </div>
                         <div className="row">

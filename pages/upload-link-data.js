@@ -96,7 +96,7 @@ export default function Uploadlinkdata() {
                 {!loading &&
                     <div className="screen">
                         <div className="screen-title">
-                            <strong>Link zur Verfügung stellen</strong>
+                        <p className="s-22 bold">Link zur Verfügung stellen</p>
                     </div>
                     <form className="data-form" name="url upload" method="post" autoComplete="off">
                         <input type="email" value={email} name="email" hidden onChange={() => { }} />
