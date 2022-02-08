@@ -68,7 +68,7 @@ export default function Home() {
                    <div className="login-loader" style={loading ? { opacity: 1 } : { opacity: 0 }}> <Image src="/loader.gif" width="35" height="35" alt="" /></div>
 
                     <div className="s-16 mar-auto mar-btm-20">
-                        Bitte loggen Sie sich ein, um daten hochzuladen.
+                        Bitte loggen Sie sich ein, um Daten hochzuladen.
                     </div>
 
                     <form className="login-form" name="open data" method="post" autoComplete="off">
@@ -86,7 +86,7 @@ export default function Home() {
                     </form>
 
                     <div className="small-comment full-w full-center">
-                        Bitte <a href="mailto: olga.popova@dpschool.io">kontaktieren</a> Sie das Bayerische Staatsministerium für Digitales, um sich <br/>zu registrieren
+                        Bitte <a href="mailto: olga.popova@dpschool.io">kontaktieren</a> Sie das Bayerische Staatsministerium für Digitales, um sich. <br/>zu registrieren
                     </div>
 
                 </div>
