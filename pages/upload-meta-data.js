@@ -46,9 +46,9 @@ export default function Uploadmetadata() {
         if (query.file == "") {
             setRed(true);
         }
-        else if (size > 50) {
-            setRed(true);
-        }
+        //else if (size > 50) {
+        //    setRed(true);
+        //}
         else {
             const fileURL = "https://script.google.com/macros/s/AKfycbw9WhoBabZne9NsPem60x7aZXyS3IlVmmr71E69EcS8I6_GBUQXUKgiVyw-qwt5CTPb/exec"
 
@@ -130,7 +130,7 @@ export default function Uploadmetadata() {
                             <span className="field">RDF-Datei hochladen*</span>
                             <div className="col">
                                 <input placeholder="Datei auswahlen" type="file" className={isRed && query.file == "" ? "red-border" : ""} name="file" onChange={handleFileChange()} />
-                                <span className={isRed && size > 50 ? "small-err red" : "small-err "}>Die maximale Dateigröße beträgt 50 MB</span>
+                                {/*<span className={isRed && size > 50 ? "small-err red" : "small-err "}>Die maximale Dateigröße beträgt 50 MB</span>*/}
                             </div>
                         </div>
                         <div className="row">
