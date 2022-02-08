@@ -62,12 +62,12 @@ export default function Home() {
             <main>
                 <div className="screen">
                     <div className="screen-title">
-                        <strong>  Login </strong>
+                        <p className="s-22 bold">  Login </p>
                     </div>
 
                    <div className="login-loader" style={loading ? { opacity: 1 } : { opacity: 0 }}> <Image src="/loader.gif" width="35" height="35" alt="" /></div>
 
-                    <div className="login-detail">
+                    <div className="s-16 mar-auto mar-btm-20">
                         Bitte loggen Sie sich ein, um daten hochzuladen.
                     </div>
 

@@ -136,7 +136,7 @@ export default function Uploaddata() {
 
                 {!loading && <div className="screen">
                     <div className="screen-title">
-                        <strong>Datei hochladen</strong>
+                        <p className="s-22 bold">Datei hochladen</p>
                     </div>
 
                     <form className="data-form" name="file upload" method="post" autoComplete="off">

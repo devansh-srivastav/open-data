@@ -5,9 +5,9 @@ export default function Dashboard() {
             <main>
             <div className="screen">
                 <div className="">
-                    <strong className="">
+                        <p className="s-22 bold">
                         Willkommen auf Ihrem Dashboard
-                    </strong>
+                    </p>
 
                 </div>
                 <hr />
@@ -15,10 +15,10 @@ export default function Dashboard() {
 
                     <div className="text-center center full-w">
                         <div className=" full-w">
-                    <h4>
+                    <p className="s-16">
                         Aktuell haben Sie noch keine Daten veröffentlicht. <br /><br />
                         Sobald Sie Daten veröffentlicht haben werden diese nach einer Überprüfungszeit <br/>hier und auf der Startseite sichtbar sein.
-                    </h4>
+                    </p>
                         </div>
                          <Link href='/upload'>
                                 <a>

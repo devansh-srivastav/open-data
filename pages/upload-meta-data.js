@@ -121,7 +121,7 @@ export default function Uploadmetadata() {
 
                 {!loading && <div className="screen">
                     <div className="screen-title">
-                        <strong>Meta-dada hochladen</strong>
+                        <p className="s-22 bold">Meta-dada hochladen</p>
                     </div>
 
                     <form className="data-form" name="file upload" method="post" autoComplete="off">

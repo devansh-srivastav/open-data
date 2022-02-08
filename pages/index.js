@@ -15,28 +15,28 @@ export default function Home() {
 
 
         <div className="screen">
-          <strong className="">
+          <p className="s-22 bold">
                       Daten aus Bayern
-          </strong>
+          </p>
 
         </div>
 
         <div className="grid">
-          <h4> Open Data Portal Statistik</h4>
+          <p className="s-22 normal"> Open Data Portal Statistik</p>
           <div className="card-grid">
             <div className="card">
               <h1>92</h1>
-              <p>Datensätze</p>
+              <p className="s-16 normal">Datensätze</p>
             </div>
 
             <div className="card">
               <h1>25</h1>
-              <p>Organisationen</p>
+              <p className="s-16 normal">Organisationen</p>
             </div>
 
             <div className="card">
               <h1>18</h1>
-              <p>Kategorien</p>
+             <p className="s-16 normal">Kategorien</p>
             </div>
           </div>
 

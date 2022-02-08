@@ -19,8 +19,7 @@ export default function Error() {
                         <div className="full-w center">
                             <div>
                                 <h1>🚫</h1>
-                                <h3>Entschuldigung, es liegt ein technischer Fehler vor.  Bitte wiederholen Sie die Aktion</h3>
-
+                                <p classname="s-16">Entschuldigung, es liegt ein technischer Fehler vor.  Bitte<br/> wiederholen Sie die Aktion</p>
                                 </div>
 
                         </div>
