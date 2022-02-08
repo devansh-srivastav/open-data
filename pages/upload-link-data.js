@@ -58,7 +58,7 @@ export default function Uploadlinkdata() {
   
     const submit = (e) => {
         e.preventDefault();
-        if (query.url == "") {
+        if (query.file == "" || query.category == "" || query.desc == "" || query.keys == "" || query.license == "" || query.title == "") {
             setRed(true);
         }
         else {
@@ -107,56 +107,56 @@ export default function Uploadlinkdata() {
                                 <span className="field">Resource-URL*</span>
                             <input placeholder="Link zur Quell-Datei" value={query.url} className={isRed && query.url == "" ? "red-border" : ""} type="text" name="url" onChange={handleChange()} />
                             </div>
-                            <div className="row">
-                                <span className="field">Titel</span>
-                                <input placeholder="Name des Datensatzes" type="text" value={query.title} name="title" onChange={handleChange()} />
-                            </div>
-                            <div className="row">
-                                <span className="field">Beschreibung</span>
-                                <textarea placeholder="Kurze Beschreibung der hochgeladenen Daten" rows="5" cols="60" type="text" value={query.desc} name="desc" onChange={handleChange()} />
-                            </div>
-                            <div className="row">
-                                <span className="field">Keywords</span>
-                                <input placeholder="Schlusselworter, um Ihren Datensatz in der Suche auffindbar zu machen" type="text" value={query.keys} name="keys" onChange={handleChange()} />
-                            </div>
-                            <div className="row">
-                                <span className="field">Kategorie</span>
-                                <select name="category" default-value={query.category} value={query.category} onChange={handleChange()}  >
-                                    {
-                                        categories.map(function (value, index) {
-                                            return (
-                                                <option value={value} key={"cate" + index}>{value}</option>
-                                            )
-                                        })
-                                    }
-                                </select>
-                            </div>
-                            <div className="row">
-                                <span className="field">Lizenz</span>
-                                <select name="license" value={query.license} onChange={handleChange()}  >
-                                    {
-                                        licences.map(function (value, index) {
-                                            return (
-                                                <option value={value} key={"license" + index}>{value}</option>
-                                            )
-                                        })
-                                    }
-                                </select>
+                        <div className="row">
+                            <span className="field">Titel*</span>
+                            <input placeholder="Name des Datensatzes" type="text" className={isRed && query.title == "" ? "red-border" : ""} value={query.title} name="title" onChange={handleChange()} />
+                        </div>
+                        <div className="row">
+                            <span className="field">Beschreibung*</span>
+                            <textarea placeholder="Kurze Beschreibung der hochgeladenen Daten" className={isRed && query.desc == "" ? "red-border" : ""} rows="5" type="text" value={query.desc} name="desc" onChange={handleChange()} />
+                        </div>
+                        <div className="row">
+                            <span className="field">Keywords*</span>
+                            <input placeholder="Schlüsselwörter, um Ihren Datensatz in der Suche auffindbar zu machen" type="text" className={isRed && query.keys == "" ? "red-border" : ""} value={query.keys} name="keys" onChange={handleChange()} />
+                        </div>
+                        <div className="row">
+                            <span className="field">Kategorie*</span>
+                            <select name="category" default-value={query.category} className={isRed && query.category == "" ? "red-border" : ""} value={query.category} onChange={handleChange()}  >
+                                {
+                                    categories.map(function (value, index) {
+                                        return (
+                                            <option value={value} key={"cate" + index}>{value}</option>
+                                        )
+                                    })
+                                }
+                            </select>
+                        </div>
+                        <div className="row">
+                            <span className="field">Lizenz*</span>
+                            <select name="license" value={query.license} className={isRed && query.license == "" ? "red-border" : ""} onChange={handleChange()}  >
+                                {
+                                    licences.map(function (value, index) {
+                                        return (
+                                            <option value={value} key={"cate" + index}>{value}</option>
+                                        )
+                                    })
+                                }
+                            </select>
 
-                            </div>
-                            <div className="row">
-                                <span className="field">Kommentar</span>
-                                <textarea placeholder="Hinterlassen Sie Kommentare zu diesem Datensatz" rows="5" cols="60" type="text" value={query.comment} name="comment" onChange={handleChange()} />
-                            </div>
-                            <div className="row center">
-                            <button type="button" name="submits" className="white-btn" onClick={() => cancel()}>
-                                    Zurück
+                        </div>
+                        <div className="row">
+                            <span className="field">Kommentar</span>
+                            <textarea placeholder="Hinterlassen Sie Kommentare zu diesem Datensatz" rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />
+                        </div>
+                        <div className="row center">
+                            <button type="button" name="submits" className="white-btn" onClick={() => openPopup(true)}>
+                                Zurück
                             </button>
 
                             <button className="black-btn" type="submit" value="submit" name="submit" onClick={(e) => submit(e)}>
-                                    Weiter
+                                Weiter
                              </button>
-                            </div>
+                        </div>
 
                         </form>
 

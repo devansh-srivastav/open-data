@@ -1,7 +1,7 @@
 export default function Loading() {
     return (
               <div className="upload-container screen">
-                <div className="row center full-w">
+                <div className="row center full-w mar-auto">
                     <h4>
                         Uploading
                    </h4>

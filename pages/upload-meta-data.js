@@ -121,7 +121,7 @@ export default function Uploadmetadata() {
 
                 {!loading && <div className="screen">
                     <div className="screen-title">
-                        <strong>Meta-daten hochladen</strong>
+                        <strong>Meta-dada hochladen</strong>
                     </div>
 
                     <form className="data-form" name="file upload" method="post" autoComplete="off">
@@ -130,7 +130,7 @@ export default function Uploadmetadata() {
                             <span className="field">RDF-Datei hochladen*</span>
                             <div className="col">
                                 <input placeholder="Datei auswahlen" type="file" className={isRed && query.file == "" ? "red-border" : ""} name="file" onChange={handleFileChange()} />
-                                <span className={isRed && size > 50 ? "small-err red" : "small-err "}>die maximale Dateigröße beträgt 50 MB</span>
+                                <span className={isRed && size > 50 ? "small-err red" : "small-err "}>Die maximale Dateigröße beträgt 50 MB</span>
                             </div>
                         </div>
                         <div className="row">

@@ -19,7 +19,7 @@ export default function Popup(props) {
                <div>
                    Sind Sie sicher, dass Sie zurück gehen wollen?<br />Die eingegebenen Daten wurden noch nicht<br />hochgeladen und könnten verloren gehen.
                </div>
-               <div className="row center">
+               <div className="full-w center pd0">
                   <Link href="/upload"> 
                   <a>
                    <button type="button" className="black-btn" >
