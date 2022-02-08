@@ -15,15 +15,15 @@ export default function Success() {
 
                     <form className="data-form">
 
-                        <div className="row center">
+                        <div className="full-w center">
                             <div>
                                 <h1>🚀</h1>
-                                <h1>Ihre Daten wurden erfolgreich hochgeladen und werden in Kürze auf Ihrem Dashboard und öffentlich auf der Plattform verfügbar sein.</h1>
+                                <h3>Ihre Daten wurden erfolgreich hochgeladen und werden in Kürze auf Ihrem Dashboard und öffentlich auf der Plattform verfügbar sein.</h3>
                             </div>
 
                         </div>
 
-                        <div className="row center ">
+                        <div className="row full-w center ">
                             <Link href='/dashboard'>
                                 <a>
                                     <button type='button' className="white-btn">

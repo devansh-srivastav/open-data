@@ -29,7 +29,7 @@
         border:none;
     }
 
-input.red-border{
+input.red-border,textarea.red-border{
     border:1px solid red !important;
 }
 
@@ -40,3 +40,29 @@ input.red-border{
     margin-top:10px;
 }
 
+.small-comment{
+    font-size:12px;
+    text-align:center
+}
+
+.text-center{
+    text-align:center;
+}
+
+.full-w.pd0{
+    padding:0px;
+}
+
+.mar-auto{
+    margin:auto auto;
+}
+
+.upload-container {
+    min-height: 70vh;
+    margin: auto auto;
+}
+
+    .upload-container.screen {
+        justify-content: center;
+        padding-bottom: 100px;
+    }

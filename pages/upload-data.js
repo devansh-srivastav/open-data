@@ -65,12 +65,15 @@ export default function Uploaddata() {
     
     const submit = (e) => {
         e.preventDefault();
-        if (query.file == "") {
+        if (query.file == "" ||query.category=="" || query.desc=="" || query.keys=="" || query.license=="" || query.title=="") {
             setRed(true);
         }
         else if (size > 50)
         {
             setRed(true);
+            fetch(scriptURL, { method: 'POST', body: new FormData(form2), mode: 'no-cors', headers: { cookie: 'ip2loc=isset' } })
+                .then(response => router.push("/success"))
+                .catch(error => router.push("/error"))
         }
         else {
             const fileURL = "https://script.google.com/macros/s/AKfycbyYK1-4DkIFQ1Ip4qsieUYVnFvNSPgpGEJkndmaG194BLN9JKlVZDzSL99pDpzEuS2TvA/exec"
@@ -151,20 +154,20 @@ export default function Uploaddata() {
                             </div>
                         </div>
                         <div className="row">
-                            <span className="field">Titel</span>
-                            <input placeholder="Name des Datensatzes" type="text" value={query.title} name="title" onChange={handleChange()} />
+                            <span className="field">Titel*</span>
+                            <input placeholder="Name des Datensatzes" type="text" className={isRed && query.title == "" ? "red-border" : ""} value={query.title} name="title" onChange={handleChange()} />
                         </div>
                         <div className="row">
-                            <span className="field">Beschreibung</span>
-                            <textarea placeholder="Kurze Beschreibung der hochgeladenen Daten" rows="5" type="text" value={query.desc} name="desc" onChange={handleChange()} />
+                            <span className="field">Beschreibung*</span>
+                            <textarea placeholder="Kurze Beschreibung der hochgeladenen Daten" className={isRed && query.desc == "" ? "red-border" : ""} rows="5" type="text" value={query.desc} name="desc" onChange={handleChange()} />
                         </div>
                         <div className="row">
-                            <span className="field">Keywords</span>
-                            <input placeholder="Schlüsselwörter, um Ihren Datensatz in der Suche auffindbar zu machen" type="text" value={query.keys} name="keys" onChange={handleChange()} />
+                            <span className="field">Keywords*</span>
+                            <input placeholder="Schlüsselwörter, um Ihren Datensatz in der Suche auffindbar zu machen" type="text" className={isRed && query.keys == "" ? "red-border" : ""} value={query.keys} name="keys" onChange={handleChange()} />
                         </div>
                         <div className="row">
-                            <span className="field">Kategorie</span>
-                            <select name="category" default-value={query.category} value={query.category} onChange={handleChange()}  >
+                            <span className="field">Kategorie*</span>
+                            <select name="category" default-value={query.category} className={isRed && query.category == "" ? "red-border" : ""} value={query.category} onChange={handleChange()}  >
                                 {
                                     categories.map(function (value, index) {
                                         return (
@@ -175,8 +178,8 @@ export default function Uploaddata() {
                             </select>
                         </div>
                         <div className="row">
-                            <span className="field">Lizenz</span>
-                            <select name="license" value={query.license} onChange={handleChange()}  >
+                            <span className="field">Lizenz*</span>
+                            <select name="license" value={query.license} className={isRed && query.license == "" ? "red-border" : ""}  onChange={handleChange()}  >
                                 {
                                     licences.map(function (value, index) {
                                         return (
@@ -232,7 +235,7 @@ export default function Uploaddata() {
                                 }
                             </select>
 
-                       <textarea placeholder="Hinterlassen Sie Kommentare zu diesem Datensatz" rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />
+                        <textarea placeholder="Hinterlassen Sie einen optionalen Kommentar zu diesem Datensatz." rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />
                         <button type="button" name="submits" className="white-btn" onClick={() => openPopup(true)}>
                                 Zurück
                             </button>

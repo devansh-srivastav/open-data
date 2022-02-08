@@ -15,14 +15,14 @@ export default function Home() {
 
 
         <div className="screen">
-          <h3 className="">
-            Daten aus Bayern
-          </h3>
+          <strong className="">
+                      Daten aus Bayern
+          </strong>
 
         </div>
 
         <div className="grid">
-          <h3> Open Data Portal Statistik</h3>
+          <h4> Open Data Portal Statistik</h4>
           <div className="card-grid">
             <div className="card">
               <h1>92</h1>

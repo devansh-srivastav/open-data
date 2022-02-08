@@ -10,24 +10,27 @@ export default function Error() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
+            
+
                 <div className="screen">
 
                     <form className="data-form">
 
-                        <div className="row center">
+                        <div className="full-w center">
                             <div>
                                 <h1>🚫</h1>
-                                <h1>Entschuldigung, es liegt ein technischer Fehler vor.  Bitte wiederholen Sie die Aktion</h1>
-                            </div>
+                                <h3>Entschuldigung, es liegt ein technischer Fehler vor.  Bitte wiederholen Sie die Aktion</h3>
+
+                                </div>
 
                         </div>
 
-                        <div className="row center ">
+                        <div className="row full-w center ">
                             <Link href='/dashboard'>
                                 <a>
                                     <button type='button' className="white-btn">
                                         Weiter zum Dashboard
-                            </button>
+                                    </button>
                                 </a>
                             </Link>
 
