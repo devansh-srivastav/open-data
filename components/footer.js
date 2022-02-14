@@ -18,7 +18,7 @@ class Footer extends Component {
                             height={80}
                         />
                         <img
-                            src="/dps-logo.svg"
+                            src="/digital-logo.svg"
                             alt="dps-logo"
                             width={100}
                             height={80}
