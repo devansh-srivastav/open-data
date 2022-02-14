@@ -129,7 +129,7 @@ export default function Uploadmetadata() {
                         <div className="row">
                             <span className="field">RDF-Datei hochladen*</span>
                             <div className="col">
-                                <input placeholder="Datei auswahlen" type="file" className={isRed && query.file == "" ? "red-border" : ""} name="file" onChange={handleFileChange()} />
+                                <input placeholder="Datei auswahlen" type="file" className={isRed && query.file == "" ? "red-border url" : "url"} name="file" onChange={handleFileChange()} />
                                 {/*<span className={isRed && size > 50 ? "small-err red" : "small-err "}>Die maximale Dateigröße beträgt 50 MB</span>*/}
                             </div>
                         </div>

@@ -1,3 +1,14 @@
+html,body {
+    padding: 0;
+    margin: 0;
+     font-family:  Roboto
+    
+}
+
+ * {
+   box-sizing: border-box;
+    
+}
 .container {
     min-height: 100vh;
     display: flex;
@@ -20,11 +31,10 @@
 }
 
 main {
-    padding: 2rem 0;
     flex: 1;
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 100%;
 }
 
 .screen {
@@ -38,17 +48,17 @@ main {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
-    .bottom-btn button {
+   /* .bottom-btn button {
         padding: 13.7557px 12.1374px;
         background-color: #000000;
         border: 1.61832px solid #000000;
         box-sizing: border-box;
         color: white;
         margin-top: 30px;
-    }
+    }*/
 
 footer {
     width: 100%;
@@ -125,7 +135,8 @@ code {
 .card-grid {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    flex: 1;
 }
 
 
@@ -213,3 +224,71 @@ input, textarea {
 .data-form{
     text-align:center;
 }
+
+.main-screen {
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    flex:1;
+}
+
+.main-screen .first{
+    width:60%;
+    border-right:3px solid black;
+    padding:10% 5% 1% 8%;
+}
+.main-screen .sec {
+        width: 40%;
+        padding: 10% 3% 5% 5%;
+        display:flex;
+        flex-direction:column;
+        justify-content:space-between;
+}
+
+.first-mid-sent{
+    margin-top:50px;
+}
+
+.blue {
+    color: #5B76FF
+}
+
+.mr0{
+    margin-right:0px;
+}
+
+.ml0 {
+    margin-left: 0px;
+}
+.mt0 {
+    margin-top: 0px;
+}
+.index-screen .blue-btn{
+
+}
+.btn-blue {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    position: absolute;
+    height: 37px;
+    margin-top: 50px;
+    background: #5B76FF;
+    border-radius: 8px;
+    margin-left: 30px;
+    color:white;
+}
+
+.mt-40{
+    margin-top:40px;
+}
+
+.mt-10 {
+    margin-top:10px;
+}
+
+
+
+

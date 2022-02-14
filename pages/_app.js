@@ -6,7 +6,6 @@ import '../styles/popup.css';
 
 export default function MyApp({ Component, pageProps }) {
     return (<div>
-        <Header />
         <Component {...pageProps} ></Component>
     </div>
     )}

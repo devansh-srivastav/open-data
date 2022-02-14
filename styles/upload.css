@@ -6,19 +6,30 @@
     max-width: 800px;
     min-width: 100%;
     flex-direction: column;
-    min-height: 200px;
+    min-height: 40vh;
     text-align: center;
 }
 
     .upload-grid .cards {
-        width:100%;
-        margin:30px;
-        background-color: #F2F2F2;
-        height:200px;
-        display:flex;
-        flex-direction:column;
-        justify-content:center;
-        cursor:pointer
+        width: 100%;
+        margin: 30px;
+        background: #FFFFFF;
+        border: 2px solid #000000;
+        box-sizing: border-box;
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        cursor: pointer;
+        flex: 1;
+    }
+
+    .upload-grid .c1{
+        margin-left:60px;
+    }
+
+    .upload-grid .c2 {
+        margin-right: 60px;
     }
 
 .data-form{
@@ -36,28 +47,43 @@
     margin: 25px;
     justify-content: flex-start;
     text-align: left;
+    margin-left: 0px;
 }
 
     .row input {
-        width: 100%;
-        background: #F2F2F2;
-        padding:5px;
-        border:none;
+        max-width: 50%;
+        width: 50%;
+        min-width:50%;
+        padding: 5px;
+        border: 1px solid black;
+        border-radius: 4px;
     }
 
+        .row input.file {
+            width: auto;
+            max-width: 100%;
+            border: 0px solid;
+            border-radius:0px;
+            margin-bottom:30px;
+        }
+
+        .row input.url {
+            margin-bottom: 30px;
+        }
+
     .row select, .row textarea {
-        width: 100%;
-        background: #F2F2F2;
+        max-width: 50%;
+        width: 50%;
+        min-width: 50%;
         padding: 5px;
-        border: none;
+        border: 1px solid black;
+        border-radius: 4px;
     }
 
     .row .field {
         min-width: 190px;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 18px;
         line-height: 15px;
+        font-weight: bold;
     }
 
     .row.center {
@@ -85,8 +111,10 @@
         cursor:pointer
     }
 
-@media(max-width:700px){
-   .upload-grid .grid-card{
+
+
+@media(max-width:700px) {
+    .upload-grid .grid-card{
         flex-direction:column;
         align-items:center;
    }
@@ -96,6 +124,7 @@
         flex-direction: column;
         align-items: flex-start;
         margin: 25px;
+        margin-left: 0px;
         justify-content: flex-start;
         text-align: left;
     }
