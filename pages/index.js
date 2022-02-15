@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Header from '../components/header.js';
 import Footer from '../components/footer.js';
 
 export default function Home() {
@@ -12,15 +11,14 @@ export default function Home() {
       </Head>
 
       <main>
-                <Header />
                 <div className="main-screen">
                   
                     <div className="first">
                         <h1 className="mt0"><span className="blue">Open Data</span> für ein <br />
-                         smartes und partizipatives bayern.</h1>
+                         smartes und partizipatives Bayern.</h1>
                         <br />
                         <div className="row first-mid-sent">
-                            <svg width="30" height="20" viewBox="0 0 40 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="30" height="30" viewBox="0 0 40 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M26 1L0 0.999998" stroke="black" />
                             </svg>
 
@@ -53,7 +51,7 @@ export default function Home() {
                             </svg>
 
 
-                            <h4 className="mt0 mr0 ml0">Hinterlassen Sie Name, Kontaktdaten und<br/> den Namen Ihrer Organisation.
+                                <h4 className="mt0 mr0 ml0">Hinterlassen Sie Name, Kontaktdaten und den<br/>  Namen Ihrer Organisation.
                            </h4>
                         </div>
                         <div className="row mt-40">
@@ -63,9 +61,22 @@ export default function Home() {
                             </svg>
 
 
-                            <h4 className="mt0 mr0 ml10">Stellen Sie den Datensatz per Link zur Verfügung <br/>
-                            oder laden Sie eine lokale Datei hoch.
+                                <h4 className="mt0 mr0 ml10">Sie können selbst entscheiden, ob Sie Ihre Daten <br />
+                                hochladen und bei uns hosten oder uns einen Link <br /> zur Verfügung stellen möchten.
                            </h4>
+                            </div>
+                            <div className="row mt-40">
+                                <svg width="50" height="55" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="14" cy="14" r="14" fill="black" />
+                                    <path d="M12.494 13.0545H13.6125C13.9708 13.0545 14.2662 12.994 14.4986 12.8729C14.731 12.747 14.9029 12.5727 15.0143 12.35C15.1305 12.1224 15.1886 11.8585 15.1886 11.5583C15.1886 11.2871 15.1353 11.0474 15.0288 10.8392C14.9271 10.6262 14.7698 10.4615 14.5567 10.3453C14.3436 10.2243 14.0749 10.1638 13.7505 10.1638C13.4939 10.1638 13.2566 10.2146 13.0387 10.3163C12.8208 10.418 12.6465 10.5608 12.5157 10.7448C12.385 10.9288 12.3196 11.1516 12.3196 11.413H10.2206C10.2206 10.832 10.3755 10.326 10.6854 9.89502C11.0002 9.46407 11.4214 9.12754 11.9492 8.88544C12.477 8.64333 13.0581 8.52228 13.6924 8.52228C14.409 8.52228 15.0361 8.63849 15.5735 8.87091C16.111 9.09849 16.5299 9.43502 16.8301 9.88049C17.1303 10.326 17.2804 10.878 17.2804 11.5365C17.2804 11.8706 17.2029 12.195 17.048 12.5098C16.893 12.8197 16.6703 13.1005 16.3798 13.3523C16.0941 13.5992 15.7454 13.7978 15.3339 13.9479C14.9223 14.0931 14.4599 14.1658 13.9466 14.1658H12.494V13.0545ZM12.494 14.6451V13.5629H13.9466C14.5228 13.5629 15.0288 13.6283 15.4646 13.759C15.9004 13.8898 16.266 14.0786 16.5613 14.3256C16.8567 14.5677 17.0794 14.8558 17.2296 15.1899C17.3797 15.5191 17.4547 15.8847 17.4547 16.2866C17.4547 16.7805 17.3603 17.2212 17.1714 17.6085C16.9826 17.991 16.7163 18.3155 16.3725 18.5818C16.0335 18.8481 15.6365 19.0515 15.1813 19.1919C14.7262 19.3275 14.2299 19.3953 13.6924 19.3953C13.2469 19.3953 12.8087 19.3347 12.3777 19.2137C11.9516 19.0878 11.5643 18.9014 11.2156 18.6544C10.8718 18.4026 10.5958 18.0879 10.3876 17.7102C10.1843 17.3277 10.0826 16.8749 10.0826 16.352H12.1816C12.1816 16.6231 12.2494 16.8653 12.385 17.0783C12.5206 17.2914 12.707 17.4584 12.9443 17.5795C13.1864 17.7005 13.4551 17.761 13.7505 17.761C14.0846 17.761 14.3703 17.7005 14.6075 17.5795C14.8497 17.4536 15.0337 17.2793 15.1595 17.0565C15.2903 16.8289 15.3557 16.565 15.3557 16.2648C15.3557 15.8775 15.2854 15.5676 15.145 15.3351C15.0046 15.0979 14.8036 14.9236 14.5422 14.8122C14.2807 14.7008 13.9708 14.6451 13.6125 14.6451H12.494Z" fill="white" />
+                                </svg>
+
+
+
+                                <h4 className="mt0 mr0 ml10">Fügen Sie die wichtigsten Metadaten zu Ihrem <br />
+                                Datensatz hinzu, um die Auffindbarkeit zu <br />
+                                verbessern.
+                                </h4>
                             </div>
                         </div>
 
@@ -75,7 +86,7 @@ export default function Home() {
                                 Was passiert mit den Daten nach dem Hochladen?
                             </h3>
                             <h4>
-                                Dies ist ein Pilotprojekt der Digitalschmiede Bayern in Kooperation mit der Digital Product School und dem Bayerischen Staatsministerium für Digitales.
+                                Derzeit arbeiten wir an der automatischen <br /> Aufbereitung des Datensatzes, so dass dieser je nach <br /> Lizenz Ihres Datensatzes an das Bundesportal <br /> GOVDATA.de weitergeleitet werden kann.
                             </h4>
                         </div>
                     </div>

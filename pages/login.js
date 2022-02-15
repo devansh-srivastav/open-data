@@ -66,13 +66,13 @@ export default function Home() {
             </Head>
 
             <main>
-                <div className="login-loader" style={loading ? { opacity: 1 } : { opacity: 0 }}> <Image src="/loader.gif" width="35" height="35" alt="" /></div>
+               <div className="login-loader" style={loading ? { opacity: 1 } : { opacity: 0 }}> <Image src="/loader.gif" width="35" height="35" alt="" /></div>
 
                 <div className="login-screen">
                     <h1>Kontaktdaten</h1>
                     <br />
                     <br />
-                    <div class="grids">
+                    <div className="grids">
                          <div className="first">
                             <div>
                                 <h4 className="h4Top">
