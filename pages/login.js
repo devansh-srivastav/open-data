@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import Image from "next/image"
 import Footer from '../components/footer.js';
 import Header from '../components/header.js';
+import Popup from '../components/popup';
 
 export default function Home() {
     const router = useRouter();
@@ -27,6 +28,8 @@ export default function Home() {
         }));
 
     };
+    const [popup, openPopup] = useState(false);
+
     const [loading, setupload] = useState(false);
     const [isRed, setRed] = useState(false);
     const submit = () => (e) => {
@@ -68,6 +71,7 @@ export default function Home() {
 
             <main>
                 <Header />
+                {popup && <Popup popup={popup} openpopup={openPopup} />}
                 <div className="login-loader" style={loading ? { opacity: 1 } : { opacity: 0 }}> <Image src="/loader.gif" width="35" height="35" alt="" /></div>
 
                 <div className="login-screen">
@@ -94,7 +98,7 @@ export default function Home() {
                                 <input placeholder="Organisation(und Abteilung)*" className={isRed && query.org == "" ? "red-border" : ""} value={query.org} name="org" onChange={handleChange()} />
                                 <div className="bottom-btn mT80">
 
-                                    <button type="submit" value="submit" name="submit" className="zuruk" onClick={cancel()}>
+                                    <button type="button" value="submit" name="submit" className="zuruk" onClick={() => openPopup(true)}>
                                         Zurück
 
                                     </button>
@@ -111,46 +115,6 @@ export default function Home() {
             </main>
             <Footer />
         </div>
-        //<div className="container">
-        //    <Head>
-        //        <title>Open Data Bayern</title>
-        //        <link rel="icon" href="/favicon.ico" />
-        //    </Head>
-        //    <main>
-        //        <div className="screen">
-        //            <div className="screen-title">
-        //                <p className="s-22 bold">  Login </p>
-        //            </div>
-
-        //           <div className="login-loader" style={loading ? { opacity: 1 } : { opacity: 0 }}> <Image src="/loader.gif" width="35" height="35" alt="" /></div>
-
-        //            <div className="s-16 mar-auto mar-btm-20">
-        //                Bitte loggen Sie sich ein, um daten hochzuladen.
-        //            </div>
-
-        //            <form className="login-form" name="open data" method="post" autoComplete="off">
-        //                <input placeholder="Name" value={query.name} name="name" className={isRed && query.name==""?"red-border":""} onChange={handleChange()}/>
-        //                <input placeholder="Email-Adresse" type="email" className={isRed && query.email == "" ? "red-border" : ""} value={query.email} name="email" onChange={handleChange()}/>
-        //                <input placeholder="Organisation(und Abteilung)" className={isRed && query.org == "" ? "red-border" : ""} value={query.org} name="org" onChange={handleChange()}/>
-        //                <div className="bottom-btn">
-
-        //                    <button type="submit" value="submit" name="submit" onClick={submit()}>
-        //                        Einloggen
-        //                    </button>
-
-
-        //                </div>
-        //            </form>
-
-        //            <div className="small-comment full-w full-center">
-        //                Bitte <a href="mailto: olga.popova@dpschool.io">kontaktieren</a> Sie das Bayerische Staatsministerium für Digitales, um sich <br/>zu registrieren
-        //            </div>
-
-        //        </div>
-
-        //    </main>
-
-
-        //</div>
+       
     )
 }

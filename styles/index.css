@@ -272,6 +272,7 @@ input, textarea {
 .btn-blue {
     display: flex;
     flex-direction: row;
+    border: 1px solid #5B76FF;
     justify-content: center;
     align-items: center;
     padding: 8px 16px;
@@ -296,8 +297,9 @@ input, textarea {
 .main-screen2 {
     width: 100%;
     display: flex;
-    flex-direction:row;
-    flex:1;
+    flex-direction: row;
+    flex: 1;
+    
 }
 
 .main-screen2 .first{
@@ -417,11 +419,11 @@ input, textarea {
     background-color: white;
     box-sizing: border-box;
     width: auto;
-
+    font-size: 0.9em;
 }
 
 .big-label{
-    min-width:124px;
+    min-width:114px;
 }      
 
 .black-l{

@@ -70,14 +70,7 @@ export default function Uploaddata() {
         if (query.file == "" || query.title == "") {
             setRed(true);
         }
-        //else if (size > 50)
-        //{
-        //    setRed(true);
-        //    fetch(scriptURL, { method: 'POST', body: new FormData(form2), mode: 'no-cors', headers: { cookie: 'ip2loc=isset' } })
-        //        .then(response => router.push("/success"))
-        //        .catch(error => router.push("/error"))
-        //}
-        else {
+         else {
             const fileURL = "https://script.google.com/macros/s/AKfycbyYK1-4DkIFQ1Ip4qsieUYVnFvNSPgpGEJkndmaG194BLN9JKlVZDzSL99pDpzEuS2TvA/exec"
 
             setupload(true);
@@ -85,7 +78,6 @@ export default function Uploaddata() {
             let form2 = document.forms['dummy upload']
             const file = form.file.files[0];
             form = document.forms['file upload'];
-            console.log(file.size)
             if (file.size < 50 * 1048576) {
                 const fr = new FileReader();
                 fr.readAsArrayBuffer(file);
