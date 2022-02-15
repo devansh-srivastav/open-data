@@ -75,7 +75,7 @@ export default function HorizontalLinearStepper() {
                     );
                 })}
             </Stepper>
-            
+
         </Box>
     );
 }

@@ -24,25 +24,25 @@ export default function Home() {
             </Head>
             <main>
                 <div className="login-screen">
-                   
+
                     <h1>Wie möchten Sie Ihre Daten zur Verfügung stellen?</h1>
                     <br />
-                    <br/>
+                    <br />
 
                     <div className="upload-grid">
                         <div className="card-grid">
-                            <div className="cards c1" onClick={() => {open("data")}}>
-                                <h2 >Lokale Datei<br/> hochladen</h2>
+                            <div className="cards c1" onClick={() => { open("data") }}>
+                                <h2 >Lokale Datei<br /> hochladen</h2>
                                 <h4 >* Alle Dateiformate erlaubt</h4>
-                                </div>
-                           
+                            </div>
 
-                             <div className="cards c2" onClick={() => { open("link") }}>
+
+                            <div className="cards c2" onClick={() => { open("link") }}>
                                 <h2 >Link zum<br /> Datensatz</h2>
                                 <h4 >* Ressource-URL zum Datensatz</h4>
-                                </div>
+                            </div>
 
-                            
+
                         </div>
 
                     </div>
@@ -51,7 +51,7 @@ export default function Home() {
 
             </main>
 
-        <Footer />
+            <Footer />
         </div>
     )
 }

@@ -8,11 +8,11 @@ export default function Uploadmetadata() {
 
     const [query, setQuery] = useState({
         file: "",
-        comment:""
+        comment: ""
     });
     const [isRed, setRed] = useState(false);
     const [popup, openPopup] = useState(false);
-    
+
 
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
@@ -29,7 +29,7 @@ export default function Uploadmetadata() {
         setEmail(localStorage.getItem("email"));
         setName(localStorage.getItem("name"));
         setOrg(localStorage.getItem("org"));
-        setFile(localStorage.getItem("email")+"_"+e.target.files[0].name);
+        setFile(localStorage.getItem("email") + "_" + e.target.files[0].name);
         setSize(e.target.files[0].size / 1048576);
     };
     const handleChange = () => (e) => {
@@ -64,7 +64,7 @@ export default function Uploadmetadata() {
                 const fr = new FileReader();
                 fr.readAsArrayBuffer(file);
                 fr.onload = f => {
-                    let newName = email+"_"+file.name;
+                    let newName = email + "_" + file.name;
                     const orgName = file.name;
                     if (orgName.includes(".")) {
                         const orgExt = orgName.split(".").pop();
@@ -125,7 +125,7 @@ export default function Uploadmetadata() {
                     </div>
 
                     <form className="data-form" name="file upload" method="post" autoComplete="off">
-                        
+
                         <div className="row">
                             <span className="field">RDF-Datei hochladen*</span>
                             <div className="col">
@@ -138,13 +138,13 @@ export default function Uploadmetadata() {
                             <textarea placeholder="Hinterlassen Sie Kommentare zu diesem Datensatz" rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />
                         </div>
                         <div className="row center">
-                            <button type="button" value="submit" name="submits"  className="white-btn" onClick={() => openPopup(true)}>
+                            <button type="button" value="submit" name="submits" className="white-btn" onClick={() => openPopup(true)}>
                                 Zurück
                             </button>
 
                             <button className="black-btn" type="submit" value="submit" name="submit" onClick={(e) => submit(e)}>
                                 Weiter
-                        </button>
+                            </button>
                         </div>
 
                     </form>
@@ -154,11 +154,11 @@ export default function Uploadmetadata() {
                         <input type="text" value={org} name="org" hidden onChange={() => { }} />
                         <input type="text" value={size} name="size" hidden onChange={() => { }} />
                         <input type="text" value={fileUrl} name="fileUrl" hidden onChange={() => { }} />
-                        
+
                         <textarea placeholder="Hinterlassen Sie Kommentare zu diesem Datensatz" rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />
                         <button type="button" name="submits" className="white-btn" onClick={() => openPopup(true)}>
                             Zurück
-                            </button>
+                        </button>
 
                         <button className="black-btn" type="submit" value="submit" name="submit" onClick={(e) => submit(e)}>
                             Weiter

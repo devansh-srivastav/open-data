@@ -10,7 +10,7 @@ export default function Error() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-            
+
 
                 <div className="screen">
 
@@ -19,8 +19,8 @@ export default function Error() {
                         <div className="full-w center">
                             <div>
                                 <h1>🚫</h1>
-                                <p className="s-16">Entschuldigung, es liegt ein technischer Fehler vor.  Bitte<br/> wiederholen Sie die Aktion</p>
-                                </div>
+                                <p className="s-16">Entschuldigung, es liegt ein technischer Fehler vor.  Bitte<br /> wiederholen Sie die Aktion</p>
+                            </div>
 
                         </div>
 
