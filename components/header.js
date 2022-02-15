@@ -1,7 +1,7 @@
 import React from "react";
-import Stepper from "@material-ui/core/Stepper";
-import Step from "@material-ui/core/Step";
-import StepLabel from "@material-ui/core/StepLabel";
+// import Stepper from "@material-ui/core/Stepper";
+// import Step from "@material-ui/core/Step";
+// import StepLabel from "@material-ui/core/StepLabel";
 import CustomStep from "./customSteps";
 import { useRouter } from 'next/router';
 
@@ -20,12 +20,12 @@ function CustomStepper(props) {
 
             <span className={(pathname != '/login') ? "stepperHr blue-b" : "stepperHr black-b"}  />
             <svg width="30" height="30" viewBox="0 0 20 20" fill={(pathname != '/login' && pathname != "/upload") ? "#5B76FF" : "none"} xmlns="http://www.w3.org/2000/svg">
-                <circle cx="10" cy="10" r="10" fill={(pathname != '/login' && pathname != "/upload") ? "#5B76FF" : "black"} stroke="" stroke-width="0.625" />
+                <circle cx="10" cy="10" r="10" fill={(pathname != '/login' && pathname != "/upload") ? "#5B76FF" : "black"} stroke="" strokeWidth="0.625" />
                 <path d="M12.561 12.5827V13.75H7.3938V12.7539L9.83734 10.134C10.0829 9.86074 10.2766 9.62036 10.4184 9.41284C10.5602 9.20186 10.6622 9.01337 10.7245 8.84735C10.7902 8.67788 10.8231 8.51705 10.8231 8.36487C10.8231 8.1366 10.785 7.94118 10.7089 7.77863C10.6328 7.61261 10.5204 7.48464 10.3717 7.39471C10.2264 7.30479 10.0466 7.25983 9.83215 7.25983C9.60388 7.25983 9.40674 7.31517 9.24072 7.42584C9.07817 7.53652 8.95365 7.69043 8.86719 7.88757C8.78418 8.08472 8.74268 8.3078 8.74268 8.55682H7.24335C7.24335 8.1072 7.35057 7.69562 7.565 7.32208C7.77944 6.94509 8.08207 6.64591 8.4729 6.42456C8.86373 6.19975 9.32719 6.08734 9.86328 6.08734C10.3925 6.08734 10.8386 6.17381 11.2018 6.34674C11.5684 6.51622 11.8451 6.76178 12.0319 7.08344C12.2221 7.40163 12.3172 7.78208 12.3172 8.22479C12.3172 8.47382 12.2774 8.71765 12.1979 8.9563C12.1183 9.19149 12.0042 9.42668 11.8555 9.66187C11.7102 9.8936 11.5338 10.1288 11.3263 10.3674C11.1188 10.6061 10.8888 10.8534 10.6363 11.1093L9.32373 12.5827H12.561Z" fill="white" />
             </svg>
 
             <div className={(pathname != '/login' && pathname != "/upload") ? "blue-l  slabel big-label" : "big-label black-l slabel"}>UPLOAD-OPTION  <br />
-AUSWAHLEN</div>
+AUSWÄHLEN</div>
 
 
             <span className={(pathname != '/login' && pathname != "/upload" ) ? "stepperHr blue-b" : "stepperHr black-b"}/>
