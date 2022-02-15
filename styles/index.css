@@ -301,12 +301,12 @@ input, textarea {
 }
 
 .main-screen2 .first{
-    width:60%;
+    width:55%;
     /* border-right:3px solid black; */
     padding:2% 5% 1% 8%;
 }
 .main-screen2 .sec {
-        width: 40%;
+        width: 45%;
         padding:2% 10% 2% 8%;
         /* display:flex;
         flex-direction:column;
@@ -320,3 +320,21 @@ input, textarea {
     margin-bottom:auto;
 }
 
+.foot-logo{
+    position:relative;
+    left:20px;
+}
+
+.dsch-logo{
+    margin-right:5px;
+}
+
+.dps-logo{
+    position:relative;
+    left: 8px;
+}
+
+.min-logo{
+    position: relative;
+    bottom: 20px;
+}
