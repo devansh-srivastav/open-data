@@ -132,3 +132,11 @@
         margin-top:10px;
     }
 }
+
+
+.back-button{
+    position:relative;
+    right: 100px;
+    top: 68px;
+}
+

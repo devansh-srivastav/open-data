@@ -14,10 +14,10 @@ export default function Home() {
     const [query, setQuery] = useState({
         name: "",
         email: "",
-        org:""
+        org: ""
     });
 
-    
+
     const handleChange = () => (e) => {
         const name = e.target.name;
         const value = e.target.value;
@@ -46,8 +46,8 @@ export default function Home() {
             fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors', headers: { cookie: 'ip2loc=isset' } })
                 .then(response => { setupload(false); router.push("/upload") })
                 .catch(error => { setupload(false); window.alert("please retry") });
-          
-        
+
+
         }
         else {
             setRed(true);
@@ -56,7 +56,7 @@ export default function Home() {
     }
 
     const cancel = () => (e) => {
-       
+
     }
 
     return (
@@ -74,41 +74,41 @@ export default function Home() {
                     <h1>Kontaktdaten</h1>
                     <br />
                     <br />
-                    <div class="grids">
-                         <div className="first">
+                    <div className="grids">
+                        <div className="first">
                             <div>
                                 <h4 className="h4Top">
-                                Bitte hinterlassen Sie Ihre Kontaktdaten und benennen Sie Ihre Organisation, damit wir Ihren Datensatz zuordnen und bei Fragen kontaktieren können.
-                            </h4>
-                            <br />
-                            <h4>
-                                Bei Fragen können Sie uns gerne kontaktieren.
-                            </h4>
-                                </div>
-
-                         </div>
-                         <div className="sec">
-                        <form className="login-form" name="open data" method="post" autoComplete="off">
-                       <input placeholder="Name*" value={query.name} name="name" className={isRed && query.name==""?"red-border":""} onChange={handleChange()}/>
-                        <input placeholder="Email*" type="email" className={isRed && query.email == "" ? "red-border" : ""} value={query.email} name="email" onChange={handleChange()}/>
-                        <input placeholder="Organisation(und Abteilung)*" className={isRed && query.org == "" ? "red-border" : ""} value={query.org} name="org" onChange={handleChange()}/>
-                       <div className="bottom-btn mT80">
-
-                                    <button type="submit" value="submit" name="submit" className="zuruk" onClick={cancel()}>
-                                Zurück
-                                   
-                            </button>
-                                    <button type="submit" value="submit" name="submit" className="weiter" onClick={submit()}>
-                                        Weiter
-                            </button>
-
+                                    Bitte hinterlassen Sie Ihre Kontaktdaten und benennen Sie Ihre Organisation, damit wir Ihren Datensatz zuordnen und bei Fragen kontaktieren können.
+                                </h4>
+                                <br />
+                                <h4>
+                                    Bei Fragen können Sie uns gerne <a href='mailto:olga.popova@dpschool.io'><u>kontaktieren</u>.</a>
+                                </h4>
+                            </div>
 
                         </div>
-                    </form>
-                         </div>
+                        <div className="sec">
+                            <form className="login-form" name="open data" method="post" autoComplete="off">
+                                <input placeholder="Name*" value={query.name} name="name" className={isRed && query.name == "" ? "red-border" : ""} onChange={handleChange()} />
+                                <input placeholder="Email*" type="email" className={isRed && query.email == "" ? "red-border" : ""} value={query.email} name="email" onChange={handleChange()} />
+                                <input placeholder="Organisation(und Abteilung)*" className={isRed && query.org == "" ? "red-border" : ""} value={query.org} name="org" onChange={handleChange()} />
+                                <div className="bottom-btn mT80">
+
+                                    <button type="submit" value="submit" name="submit" className="zuruk" onClick={cancel()}>
+                                        Zurück
+
+                                    </button>
+                                    <button type="submit" value="submit" name="submit" className="weiter" onClick={submit()}>
+                                        Weiter
+                                    </button>
+
+
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    </div>
-                 </main>
+                </div>
+            </main>
             <Footer />
         </div>
         //<div className="container">

@@ -34,13 +34,13 @@ export default function Uploadlinkdata() {
         "Nutzungsbestimmungen für die Bereitstellung von Geodaten des Bundes",
         "Creative Commons CC Zero License(cc - zero)",
         "Amtliches Werk, lizenzfrei nach §5 Abs. 1 UrhG", "Andere"];
-        
+
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [org, setOrg] = useState("");
 
     const [isRed, setRed] = useState(false);
-    const [popupcontent,setContent] = useState("Sind Sie sicher, dass Sie zuruckgehen wollen? Die eingegebenen Daten werden nicht gespeichert.");
+    const [popupcontent, setContent] = useState("Sind Sie sicher, dass Sie zuruckgehen wollen? Die eingegebenen Daten werden nicht gespeichert.");
     const [popup, openPopup] = useState(false);
     const handleChange = () => (e) => {
         const name = e.target.name;
@@ -57,7 +57,7 @@ export default function Uploadlinkdata() {
         }
     };
 
-  
+
     const submit = (e) => {
         e.preventDefault();
         if (query.file == "" || query.title == "") {
@@ -84,7 +84,7 @@ export default function Uploadlinkdata() {
 
     }
 
-    const cancel = () =>{
+    const cancel = () => {
         openPopup(true);
     }
     return (
@@ -99,68 +99,68 @@ export default function Uploadlinkdata() {
                 {!loading &&
                     <div className="input-screen">
                         <h1>Link zur Verfügung stellen</h1>
-                   
-                    <form className="data-form" name="url upload" method="post" autoComplete="off">
-                        <input type="email" value={email} name="email" hidden onChange={() => { }} />
-                        <input type="text" value={name} name="name" hidden onChange={() => { }} />
-                        <input type="text" value={org} name="org" hidden onChange={() => { }} />
+
+                        <form className="data-form" name="url upload" method="post" autoComplete="off">
+                            <input type="email" value={email} name="email" hidden onChange={() => { }} />
+                            <input type="text" value={name} name="name" hidden onChange={() => { }} />
+                            <input type="text" value={org} name="org" hidden onChange={() => { }} />
 
                             <div className="row">
                                 <span className="field">Resource-URL*</span>
-                            <input placeholder="Link zur Quell-Datei" value={query.url} className={isRed && query.url == "" ? "red-border url" : "url"} type="text" name="url" onChange={handleChange()} />
+                                <input placeholder="Link zur Quell-Datei" value={query.url} className={isRed && query.url == "" ? "red-border url" : "url"} type="text" name="url" onChange={handleChange()} />
                             </div>
-                        <div className="row">
-                            <span className="field">Titel*</span>
-                            <input placeholder="Name des Datensatzes" type="text" className={isRed && query.title == "" ? "red-border" : ""} value={query.title} name="title" onChange={handleChange()} />
-                        </div>
-                        <div className="row">
-                            <span className="field">Beschreibung</span>
-                            <textarea placeholder="Kurze Beschreibung der hochgeladenen Daten" className={isRed && query.desc == "" ? "red-border" : ""} rows="5" type="text" value={query.desc} name="desc" onChange={handleChange()} />
-                        </div>
-                        <div className="row">
-                            <span className="field">Keywords</span>
-                            <input placeholder="Schlüsselwörter, um Ihren Datensatz in der Suche auffindbar zu machen" type="text" className={isRed && query.keys == "" ? "red-border" : ""} value={query.keys} name="keys" onChange={handleChange()} />
-                        </div>
-                        <div className="row">
-                            <span className="field">Kategorie</span>
-                            <select name="category" default-value={query.category} className={isRed && query.category == "" ? "red-border" : ""} value={query.category} onChange={handleChange()}  >
-                                {
-                                    categories.map(function (value, index) {
-                                        return (
-                                            <option value={value} key={"cate" + index}>{value}</option>
-                                        )
-                                    })
-                                }
-                            </select>
-                        </div>
-                        <div className="row">
-                            <span className="field">Lizenz</span>
-                            <select name="license" value={query.license} className={isRed && query.license == "" ? "red-border" : ""} onChange={handleChange()}  >
-                                {
-                                    licences.map(function (value, index) {
-                                        return (
-                                            <option value={value} key={"cate" + index}>{value}</option>
-                                        )
-                                    })
-                                }
-                            </select>
-
-                        </div>
-                        <div className="row">
-                            <span className="field">Kommentar</span>
-                            <textarea placeholder="Hinterlassen Sie einen Kommentar zu diesem Datensatz" rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />
-                            <div className="row center">
-                                <button type="button" name="submits" className="zuruk" onClick={() => openPopup(true)}>
-                                    Zurück
-                            </button>
-
-                                <button className="weiter" type="submit" value="submit" name="submit" onClick={(e) => submit(e)}>
-                                    Weiter
-                             </button>
-
+                            <div className="row">
+                                <span className="field">Titel*</span>
+                                <input placeholder="Name des Datensatzes" type="text" className={isRed && query.title == "" ? "red-border" : ""} value={query.title} name="title" onChange={handleChange()} />
+                            </div>
+                            <div className="row">
+                                <span className="field">Beschreibung</span>
+                                <textarea placeholder="Kurze Beschreibung der hochgeladenen Daten" className={isRed && query.desc == "" ? "red-border" : ""} rows="5" type="text" value={query.desc} name="desc" onChange={handleChange()} />
+                            </div>
+                            <div className="row">
+                                <span className="field">Keywords</span>
+                                <input placeholder="Schlüsselwörter, um Ihren Datensatz in der Suche auffindbar zu machen" type="text" className={isRed && query.keys == "" ? "red-border" : ""} value={query.keys} name="keys" onChange={handleChange()} />
+                            </div>
+                            <div className="row">
+                                <span className="field">Kategorie</span>
+                                <select name="category" default-value={query.category} className={isRed && query.category == "" ? "red-border" : ""} value={query.category} onChange={handleChange()}  >
+                                    {
+                                        categories.map(function (value, index) {
+                                            return (
+                                                <option value={value} key={"cate" + index}>{value}</option>
+                                            )
+                                        })
+                                    }
+                                </select>
+                            </div>
+                            <div className="row">
+                                <span className="field">Lizenz</span>
+                                <select name="license" value={query.license} className={isRed && query.license == "" ? "red-border" : ""} onChange={handleChange()}  >
+                                    {
+                                        licences.map(function (value, index) {
+                                            return (
+                                                <option value={value} key={"cate" + index}>{value}</option>
+                                            )
+                                        })
+                                    }
+                                </select>
 
                             </div>
-                        </div>
+                            <div className="row">
+                                <span className="field">Kommentar</span>
+                                <textarea placeholder="Hinterlassen Sie einen Kommentar zu diesem Datensatz" rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />
+                                <div className="row center">
+                                    <button type="button" name="submits" className="zuruk" onClick={() => openPopup(true)}>
+                                        Zurück
+                                    </button>
+
+                                    <button className="weiter" type="submit" value="submit" name="submit" onClick={(e) => submit(e)}>
+                                        Weiter
+                                    </button>
+
+
+                                </div>
+                            </div>
 
                         </form>
 
@@ -174,7 +174,7 @@ export default function Uploadlinkdata() {
 
             </main>
 
-<Footer />
+            <Footer />
         </div>
     );
 }
