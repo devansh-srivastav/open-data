@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import Footer from '../components/footer.js';
+import Image from 'next/image'
 
 export default function Success() {
     return (
@@ -16,13 +17,13 @@ export default function Success() {
 
                     <div className="row">
                         <h1 className="mt0">Bei der Bearbeitung Ihrer Anfrage ist <br />leider ein technischer Fehler aufgetreten. </h1>
-                        <img className='rocket'
+                        <div className='cross'><Image
                             src="/error.svg"
                             alt="error"
                             width={100}
                             height={60}
                         />
-
+                        </div>
 
 
                     </div>

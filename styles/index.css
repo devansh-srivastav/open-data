@@ -344,3 +344,9 @@ input, textarea {
     left:35px;
     top:12px;
 }
+
+.cross{
+    position: relative;
+    left:35px;
+    top:12px;
+}
