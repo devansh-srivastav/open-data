@@ -1,64 +1,82 @@
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import Link from 'next/link'
+import Box from '@mui/material/Box';
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import { useState, Fragment } from 'react';
 
-export default function Header() {
+const steps = ['Select campaign settings', 'Create an ad group', 'Create an ad'];
 
-    const login = () => {
-        console.log("a")
-        window.open("/login", "_self");
-    }
-    const router = useRouter();
-    const path = router.pathname;
+export default function HorizontalLinearStepper() {
+    const [activeStep, setActiveStep] = useState(0);
+    const [skipped, setSkipped] = useState(new Set());
+
+    const isStepOptional = (step) => {
+        return step === 1;
+    };
+
+    const isStepSkipped = (step) => {
+        return skipped.has(step);
+    };
+
+    const handleNext = () => {
+        let newSkipped = skipped;
+        if (isStepSkipped(activeStep)) {
+            newSkipped = new Set(newSkipped.values());
+            newSkipped.delete(activeStep);
+        }
+
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        setSkipped(newSkipped);
+    };
+
+    const handleBack = () => {
+        setActiveStep((prevActiveStep) => prevActiveStep - 1);
+    };
+
+    const handleSkip = () => {
+        if (!isStepOptional(activeStep)) {
+            // You probably want to guard against something like this,
+            // it should never occur unless someone's actively trying to break something.
+            throw new Error("You can't skip a step that isn't optional.");
+        }
+
+        setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        setSkipped((prevSkipped) => {
+            const newSkipped = new Set(prevSkipped.values());
+            newSkipped.add(activeStep);
+            return newSkipped;
+        });
+    };
+
+    const handleReset = () => {
+        setActiveStep(0);
+    };
+
     return (
-        <div className="header-containers">
-            <header className="header">
-                <div className="ind-top-line">
-
-                </div>
-            </header>
+        <Box sx={{ width: '100%' }}>
+            <Stepper activeStep={activeStep}>
+                {steps.map((label, index) => {
+                    const stepProps = {};
+                    const labelProps = {};
+                    if (isStepOptional(index)) {
+                        labelProps.optional = (
+                            <Typography variant="caption">Optional</Typography>
+                        );
+                    }
+                    if (isStepSkipped(index)) {
+                        stepProps.completed = false;
+                    }
+                    return (
+                        <Step key={label} {...stepProps}>
+                            <StepLabel {...labelProps}>{label}</StepLabel>
+                        </Step>
+                    );
+                })}
+            </Stepper>
             
-            <style jsx>{`
-
-          
-
-        .header-containers {
-          min-width:100%;
-        }
-        .header{
-                height:80px;
-                padding:10px  10%;
-                background-color:#F2F2F2;
-                width:100%;
-               
-          }
-          .header-div{
-                display:flex;
-                flex-direction:row;
-                justify-content:space-between;
-                align-items:center;
-                height:100%;
-           }
-        .header button{
-             background-color:transparent;
-        }
-
-        `}</style>
-
-            <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
-        </div>
-    )
+        </Box>
+    );
 }
+

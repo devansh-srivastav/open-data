@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Link from 'next/link'
-
+import Header from '../components/header.js';
 import Footer from '../components/footer.js';
 
 export default function Home() {
@@ -12,8 +12,9 @@ export default function Home() {
       </Head>
 
       <main>
-
+                <Header />
                 <div className="main-screen">
+                  
                     <div className="first">
                         <h1 className="mt0"><span className="blue">Open Data</span> für ein <br />
                          smartes und partizipatives bayern.</h1>
