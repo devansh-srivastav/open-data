@@ -80,7 +80,7 @@ export default function Home() {
                             </h4>
                             <br />
                             <h4>
-                                Bei Fragen können Sie uns gerne kontaktieren.
+                                    Bei Fragen können Sie uns gerne <a href='mailto:olga.popova@dpschool.io'><u>kontaktieren</u>.</a>
                             </h4>
                                 </div>
 
