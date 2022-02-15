@@ -24,6 +24,21 @@ export default function Home() {
             </Head>
             <main>
                 <div className="login-screen">
+                    <Link href='/login'>
+                        <a>
+                            <svg className='back-button' width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clipPath="url(#clip0_720_3164)">
+                                    <path d="M30.83 32.67L21.66 23.5L30.83 14.33L28 11.5L16 23.5L28 35.5L30.83 32.67Z" fill="black" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_720_3164">
+                                        <rect width="48" height="48" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </a>
+                    </Link>
+
 
                     <h1>Wie möchten Sie Ihre Daten zur Verfügung stellen?</h1>
                     <br />
