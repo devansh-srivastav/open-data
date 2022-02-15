@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 import Footer from '../components/footer.js';
+import Header from '../components/header.js';
 
 export default function Home() {
     const Router = useRouter();
@@ -23,6 +24,7 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
+                <Header />
                 <div className="login-screen">
                    
                     <h1>Wie möchten Sie Ihre Daten zur Verfügung stellen?</h1>

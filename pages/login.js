@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Image from "next/image"
 import Footer from '../components/footer.js';
+import Header from '../components/header.js';
 
 export default function Home() {
     const router = useRouter();
@@ -66,6 +67,7 @@ export default function Home() {
             </Head>
 
             <main>
+                <Header />
                 <div className="login-loader" style={loading ? { opacity: 1 } : { opacity: 0 }}> <Image src="/loader.gif" width="35" height="35" alt="" /></div>
 
                 <div className="login-screen">

@@ -12,7 +12,7 @@ export default function Home() {
       </Head>
 
       <main>
-                <Header />
+               
                 <div className="main-screen">
                   
                     <div className="first">

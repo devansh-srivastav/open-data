@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Loader from '../components/loading'
 import Footer from '../components/footer.js';
+import Header from '../components/header.js';
 
 export default function Uploadlinkdata() {
 
@@ -93,6 +94,7 @@ export default function Uploadlinkdata() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
+                <Header />
                 {popup && <Popup popup={popup} openpopup={openPopup} />}
                 {!loading &&
                     <div className="input-screen">

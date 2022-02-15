@@ -2,7 +2,8 @@ import Head from 'next/head';
 import { useState } from 'react';
 import Popup from '../components/popup';
 import { useRouter } from 'next/router';
-import Loader from '../components/loading'
+import Loader from '../components/loading';
+
 
 export default function Uploadmetadata() {
 
