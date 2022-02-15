@@ -147,3 +147,12 @@ input.red-border,textarea.red-border{
 .mT80{
     margin-top:80px;
 }
+
+.m-zuruk {
+    margin: 10px 0px 10px 30px;
+    
+}
+
+.success .zuruk {
+        padding: 8px 16px !important;
+}

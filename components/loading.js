@@ -2,9 +2,9 @@ export default function Loading() {
     return (
         <div className="upload-container screen">
             <div className="row center full-w mar-auto">
-                <h4>
+                <h2 className="mb0">
                     Uploading
-                </h4>
+                </h2>
 
                 <svg width="38" height="6" viewBox="0 0 38 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3.23838 0.91436C4.6364 0.91436 5.76972 2.04768 5.76972 3.44571C5.76972 4.84373 4.6364 5.97705 3.23838 5.97705C1.84035 5.97705 0.707031 4.84373 0.707031 3.44571C0.707031 2.04768 1.84035 0.91436 3.23838 0.91436Z" fill="#2EC0D7" />

@@ -147,19 +147,19 @@ export default function Uploaddata() {
                         </div>
                         <div className="row">
                             <span className="field">Titel*</span>
-                            <input placeholder="Name des Datensatzes" type="text" className={isRed && query.title == "" ? "red-border" : ""} value={query.title} name="title" onChange={handleChange()} />
+                            <input placeholder="Name des Datensatzes" type="text" className={isRed && query.title == "" ? "red-border" : ""}  value={query.title} name="title" onChange={handleChange()} />
                         </div>
                         <div className="row">
                             <span className="field">Beschreibung</span>
-                            <textarea placeholder="Einige nützliche Hinweise zu den Daten" className={isRed && query.desc == "" ? "red-border" : ""} rows="5" type="text" value={query.desc} name="desc" onChange={handleChange()} />
+                            <textarea placeholder="Einige nützliche Hinweise zu den Daten"  rows="5" type="text" value={query.desc} name="desc" onChange={handleChange()} />
                         </div>
                         <div className="row">
                             <span className="field">Keywords</span>
-                            <input placeholder="Schlüsselwörter, um Ihren Datensatz in der Suche auffindbar zu machen" type="text" className={isRed && query.keys == "" ? "red-border" : ""} value={query.keys} name="keys" onChange={handleChange()} />
+                            <input placeholder="Schlüsselwörter, um Ihren Datensatz in der Suche auffindbar zu machen" type="text" value={query.keys} name="keys" onChange={handleChange()} />
                         </div>
                         <div className="row">
                             <span className="field">Kategorie</span>
-                            <select name="category" default-value={query.category} className={isRed && query.category == "" ? "red-border" : ""} value={query.category} onChange={handleChange()}  >
+                            <select name="category" default-value={query.category} value={query.category} onChange={handleChange()}  >
                                 {
                                     categories.map(function (value, index) {
                                         return (
@@ -171,7 +171,7 @@ export default function Uploaddata() {
                         </div>
                         <div className="row">
                             <span className="field">Lizenz</span>
-                            <select name="license" value={query.license} className={isRed && query.license == "" ? "red-border" : ""} onChange={handleChange()}  >
+                            <select name="license" value={query.license} onChange={handleChange()}  >
                                 {
                                     licences.map(function (value, index) {
                                         return (

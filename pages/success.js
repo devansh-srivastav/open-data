@@ -40,15 +40,22 @@ export default function Success() {
                         </h3>
                     </div>
 
-                    <div className="btn-blue">
+                    <div className="row success">
+                    <div className="btn-blue m-zuruk">
                         <Link href='/upload'>
                             <a>
                                 Weitere Daten hochladen
                             </a>
                         </Link>
 
-                    </div>
+                        </div>
+                        <div className="zuruk">
+                            <a href='mailto:olga.popova@dpschool.io'> Feedback mitteilen
+                                   
+                            </a>
 
+                        </div>
+                     </div>
 
                 </div>
 
