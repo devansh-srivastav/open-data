@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Popup from '../components/popup';
 import { useRouter } from 'next/router'
 import Loader from '../components/loading';
+import Footer from '../components/footer.js';
 
 export default function Uploaddata() {
 
@@ -254,9 +255,10 @@ export default function Uploaddata() {
                     <Loader />
 
                 }
+                
             </main>
             
-
+            <Footer />
 
         </div>
     )

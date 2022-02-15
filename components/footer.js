@@ -11,24 +11,26 @@ class Footer extends Component {
                         <h4>Dies ist ein Pilotprojekt der Digitalschmiede Bayern in Kooperation mit der Digital <br />Product School und dem Bayerischen Staatsministerium für Digitales.</h4>
                     </div>
                     <div className='sec'>
-                        <img
-                            src="/dps-logo.svg"
-                            alt="dps-logo"
-                            width={100}
-                            height={80}
-                        />
-                        <img
+                    <div className='foot-logo'>
+                        <img className='dsch-logo'
                             src="/digital-logo.svg"
                             alt="dps-logo"
                             width={100}
                             height={80}
                         />
-                        {/*<img*/}
-                        {/*    src="/bsmd-logo.svg"*/}
-                        {/*    alt="dps-logo"*/}
-                        {/*    width={100}*/}
-                        {/*    height={65}*/}
-                        {/*/>*/}
+                        <img className='dps-logo'
+                            src="/dps-logo.svg"
+                            alt="dps-logo"
+                            width={100}
+                            height={80}
+                        />
+                        <img className='min-logo'
+                            src="/bsmd-logo.svg"
+                            alt="dps-logo"
+                            width={100}
+                            height={35}
+                        />
+                    </div>
                     </div>
                 </div>
 

@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Image from "next/image"
+import Footer from '../components/footer.js';
 
 export default function Home() {
     const router = useRouter();
@@ -106,6 +107,7 @@ export default function Home() {
                     </div>
                     </div>
                  </main>
+            <Footer />
         </div>
         //<div className="container">
         //    <Head>

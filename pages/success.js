@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
+import Footer from '../components/footer.js';
 
 export default function Success() {
     return (
@@ -15,7 +16,12 @@ export default function Success() {
 
                     <div className="row">
                         <h1 className="mt0">Ihre Daten wurden <br />erfolgreich hochgeladen!</h1>
-                        <h1>🚀</h1>
+                        <img
+                            src="/success.svg"
+                            alt="success"
+                            width={100}
+                            height={80}
+                        />
 
 
 
@@ -46,7 +52,7 @@ export default function Success() {
                 </div>
 
             </main>
-
+<Footer />
 
         </div>
 

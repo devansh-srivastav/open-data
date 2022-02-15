@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
+import Footer from '../components/footer.js';
 
 export default function Home() {
     const Router = useRouter();
@@ -50,7 +51,7 @@ export default function Home() {
 
             </main>
 
-
+        <Footer />
         </div>
     )
 }

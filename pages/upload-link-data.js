@@ -4,6 +4,7 @@ import Popup from '../components/popup';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Loader from '../components/loading'
+import Footer from '../components/footer.js';
 
 export default function Uploadlinkdata() {
 
@@ -171,7 +172,7 @@ export default function Uploadlinkdata() {
 
             </main>
 
-
+<Footer />
         </div>
     );
 }
