@@ -23,12 +23,12 @@ class Footer extends Component {
                             width={100}
                             height={80}
                         />
-                        <img
-                            src="/bsmd-logo.svg"
-                            alt="dps-logo"
-                            width={100}
-                            height={65}
-                        />
+                        {/*<img*/}
+                        {/*    src="/bsmd-logo.svg"*/}
+                        {/*    alt="dps-logo"*/}
+                        {/*    width={100}*/}
+                        {/*    height={65}*/}
+                        {/*/>*/}
                     </div>
                 </div>
 

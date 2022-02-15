@@ -7,6 +7,6 @@ import '../styles/popup.css';
 export default function MyApp({ Component, pageProps }) {
     return (<div>
         <Component {...pageProps} ></Component>
-        <Footer />
+        
     </div>
     )}

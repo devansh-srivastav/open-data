@@ -13,17 +13,17 @@ export default function Popup(props) {
                    </svg>
                </div>
                <div className="login-details">
-                   <p className="s-22 bold">Zurück</p>
+                   <h2>Zurück</h2>
                 </div>
                
-               <div className="s-16">
+               <h5>
                    Sind Sie sicher, dass Sie zurück gehen wollen?<br />Die eingegebenen Daten wurden noch nicht<br />hochgeladen und könnten verloren gehen.
-               </div>
+               </h5>
                <div className="full-w center pd0">
                   <Link href="/upload"> 
                   <a>
-                   <button type="button" className="black-btn" >
-                       Vorgang abbrechen
+                           <button type="button" className="btn-blue marAuto" >
+                               Vorgang abbrechen
                    </button>
                        </a>
                </Link>
