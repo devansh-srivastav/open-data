@@ -452,3 +452,8 @@ input, textarea {
 .red-b {
     border-top: 3px solid #CE0D18 !important;
 }
+
+
+.lh{
+    line-height:130px;
+}

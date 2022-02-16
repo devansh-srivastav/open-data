@@ -22,7 +22,7 @@ export default function Home() {
                                 <path d="M26 1L0 0.999998" stroke="black" />
                             </svg>
 
-                            <h3 className="mt0 mr0 ml0 lh30">Veröffentlichen Sie Ihre Daten auf der Open Data  <br />
+                            <h3 className="mt0 mr0 ml0 lh30 lh">Veröffentlichen Sie Ihre Daten auf der Open Data  <br />
                                 Plattform Bayern und machen so Ihre Daten für  <br />
                                 eine breitere Öffentlichkeit auffindbar.
                             </h3>
