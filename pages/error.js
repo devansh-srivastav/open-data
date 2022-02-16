@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Footer from '../components/footer.js';
 import Image from 'next/image'
+import Header from '../components/header.js';
 
 export default function Success() {
     return (
@@ -12,7 +13,7 @@ export default function Success() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main>
-
+                <Header />
                 <div className="login-screen">
 
                     <div className="row">

@@ -24,7 +24,7 @@ export default function Home() {
 
                             <h3 className="mt0 mr0 ml0">Veröffentlichen Sie Ihre Daten auf der Open Data  <br />
                                 Plattform Bayern und machen so Ihre Daten für  <br />
-                                die eine breitere Öffentlichkeit auffindbar.
+                                eine breitere Öffentlichkeit auffindbar.
                             </h3>
                         </div>
 
