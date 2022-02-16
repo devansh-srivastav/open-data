@@ -106,7 +106,7 @@ export default function Uploadlinkdata() {
                             <input type="email" value={email} name="email" hidden onChange={() => { }} />
                             <input type="text" value={name} name="name" hidden onChange={() => { }} />
                             <input type="text" value={org} name="org" hidden onChange={() => { }} />
-                            <input type="text" value={query.date} name="org" hidden onChange={() => { }} />   
+                            <input type="text" value={query.date} name="date" hidden onChange={() => { }} />   
 
                             <div className="row">
                                 <span className="field">Resource-URL</span>

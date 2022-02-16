@@ -210,7 +210,8 @@ export default function Uploaddata() {
                         <input type="text" value={org} name="org" hidden onChange={() => { }} />
                         <input type="text" value={size} name="size" hidden onChange={() => { }} />
                         <input type="text" value={fileUrl} name="fileUrl" hidden onChange={() => { }} />
-                        <input type="text" value={query.date} name="org" hidden onChange={() => { }} />
+                        <input type="text" value={query.date} name="date" hidden onChange={() => { }} />
+
                         <input placeholder="Datei auswahlen" type="file" className={isRed && query.file == "" ? "red-border" : ""} name="file" onChange={handleFileChange()} />
 
                         <textarea placeholder="Kurze Beschreibung der hochgeladenen Daten" rows="5" type="text" value={query.desc} name="desc" onChange={handleChange()} />
