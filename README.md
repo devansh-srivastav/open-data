@@ -6,5 +6,5 @@ You need to have [Docker installed locally](https://docs.docker.com/get-docker/)
 
 ## Basic Commands
 
-Build Production Image: `docker build -t exp .`
-Run Docker Image:  `docker run --name EXP_CONTAINER -p 0.0.0.0:3000:3000 exp`
+Build Production Image: `docker build  . -t open-data:latest`
+Run Docker Image:  `docker run -e PORT=8080 -p 8080:8080 open-data`
