@@ -26,10 +26,11 @@ export default function Home() {
             ...prevState,
             [name]: value
         }));
+        setChange(true);
 
     };
     const [popup, openPopup] = useState(false);
-
+    const [change, setChange] = useState(false);
     const [loading, setupload] = useState(false);
     const [isRed, setRed] = useState(false);
     const submit = () => (e) => {
@@ -98,7 +99,7 @@ export default function Home() {
                                 <input placeholder="Organisation(und Abteilung)*" className={isRed && query.org == "" ? "red-border" : ""} value={query.org} name="org" onChange={handleChange()} />
                                 <div className="bottom-btn mT80">
 
-                                    <button type="button" value="submit" name="submit" className="zuruk" onClick={() => openPopup(true)}>
+                                    <button type="button" value="submit" name="submit" className="zuruk" onClick={() => (change == true && (query.name != "" || query.email != "" || query.org != "")) ? openPopup(true) : router.push("/")}>
                                         Zurück
 
                                     </button>

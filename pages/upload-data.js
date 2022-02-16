@@ -38,6 +38,7 @@ export default function Uploaddata() {
     const [fileUrl, setFile] = useState("");
     const [size, setSize] = useState("");
     const [isRed, setRed] = useState(false);
+    const [change, setChange] = useState(false);
     const [popupcontent, setContent] = useState("Sind Sie sicher, dass Sie zuruckgehen wollen? Die eingegebenen Daten werden nicht gespeichert.");
     const [popup, openPopup] = useState(false);
     const handleChange = () => (e) => {
@@ -47,6 +48,7 @@ export default function Uploaddata() {
             ...prevState,
             [name]: value
         }));
+        setChange(true);
     };
 
     const [loading, setupload] = useState(false);
@@ -61,6 +63,7 @@ export default function Uploaddata() {
         setOrg(localStorage.getItem("org"));
         setFile(localStorage.getItem("email") + "_" + e.target.files[0].name);
         setSize(e.target.files[0].size / 1048576);
+        setChange(true);
     };
     const router = useRouter();
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwITNaAxw3PgsLYZJ7Fn1oJ2XnPb09BNxo48x1ZCGc5LAdkNmaNt357u9NpR2tmvposbw/exec'
@@ -186,12 +189,12 @@ export default function Uploaddata() {
                             <span className="field">Kommentar</span>
                             <textarea placeholder="Hinterlassen Sie einen Kommentar zu diesem Datensatz" rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />
                             <div className="row center">
-                                <button type="button" name="submits" className="zuruk" onClick={() => openPopup(true)}>
+                                <button type="button" name="submits" className="zuruk" onClick={() => (change == true && (query.file != "" || query.title != ""))?openPopup(true):router.push("/upload")}>
                                     Zurück
                                 </button>
 
                                 <button className="weiter" type="submit" value="submit" name="submit" onClick={(e) => submit(e)}>
-                                    Weiter
+                                    Hochladen
                                 </button>
 
 
@@ -236,7 +239,7 @@ export default function Uploaddata() {
                         </button>
 
                         <button className="black-btn" type="submit" value="submit" name="submit" onClick={(e) => submit(e)}>
-                            Weiter
+                            Hochladen
                         </button>
 
                     </form>

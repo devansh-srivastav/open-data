@@ -38,7 +38,7 @@ export default function Uploadlinkdata() {
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
     const [org, setOrg] = useState("");
-
+    const [change, setChange] = useState(false);
     const [isRed, setRed] = useState(false);
     const [popupcontent, setContent] = useState("Sind Sie sicher, dass Sie zuruckgehen wollen? Die eingegebenen Daten werden nicht gespeichert.");
     const [popup, openPopup] = useState(false);
@@ -55,6 +55,7 @@ export default function Uploadlinkdata() {
             setOrg(localStorage.getItem("org"));
 
         }
+        setChange(true);
     };
 
 
@@ -150,12 +151,12 @@ export default function Uploadlinkdata() {
                                 <span className="field">Kommentar</span>
                                 <textarea placeholder="Hinterlassen Sie einen Kommentar zu diesem Datensatz" rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />
                                 <div className="row center">
-                                    <button type="button" name="submits" className="zuruk" onClick={() => openPopup(true)}>
+                                <button type="button" name="submits" className="zuruk" onClick={() => (change == true && (query.url!=""|| query.title!="")) ? openPopup(true) : router.push("/upload")}>
                                         Zurück
                                     </button>
 
                                     <button className="weiter" type="submit" value="submit" name="submit" onClick={(e) => submit(e)}>
-                                        Weiter
+                                    Hochladen
                                     </button>
 
 
