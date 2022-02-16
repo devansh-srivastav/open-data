@@ -50,13 +50,13 @@ export default function Home() {
                         <div className="card-grid">
                             <div className="cards c1" onClick={() => { open("data") }}>
                                 <h2 >Lokale Datei<br /> hochladen</h2>
-                                <h4 >* Alle Dateiformate erlaubt</h4>
+                                <h4 >Alle Dateiformate erlaubt</h4>
                             </div>
 
 
                             <div className="cards c2" onClick={() => { open("link") }}>
                                 <h2 >Link zum<br /> Datensatz</h2>
-                                <h4 >* Ressource-URL zum Datensatz</h4>
+                                <h4 >Ressource-URL zum Datensatz</h4>
                             </div>
 
 

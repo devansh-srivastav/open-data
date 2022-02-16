@@ -107,11 +107,11 @@ export default function Uploadlinkdata() {
                             <input type="text" value={org} name="org" hidden onChange={() => { }} />
 
                             <div className="row">
-                                <span className="field">Resource-URL*</span>
+                                <span className="field">Resource-URL</span>
                                 <input placeholder="Link zur Quell-Datei" value={query.url} className={isRed && query.url == "" ? "red-border url" : "url"} type="text" name="url" onChange={handleChange()} />
                             </div>
                             <div className="row">
-                                <span className="field">Titel*</span>
+                                <span className="field">Titel</span>
                                 <input placeholder="Name des Datensatzes" type="text" className={isRed && query.title == "" ? "red-border" : ""} value={query.title} name="title" onChange={handleChange()} />
                             </div>
                             <div className="row">

@@ -142,14 +142,14 @@ export default function Uploaddata() {
                         <input type="text" value={fileUrl} name="fileUrl" hidden onChange={() => { }} />
 
                         <div className="row">
-                            <span className="field">Datei hochladen*</span>
+                            <span className="field">Datei hochladen</span>
                             <div className="col">
                                 <input placeholder="Datei auswahlen" type="file" className={isRed && query.file == "" ? "red-border file" : "file"} name="file" onChange={handleFileChange()} />
                                 {/*<span className={isRed && size > 50 ? "small-err red" : "small-err "}>Die maximale Dateigröße beträgt 50 MB</span>*/}
                             </div>
                         </div>
                         <div className="row">
-                            <span className="field">Titel*</span>
+                            <span className="field">Titel</span>
                             <input placeholder="Name des Datensatzes" type="text" className={isRed && query.title == "" ? "red-border" : ""}  value={query.title} name="title" onChange={handleChange()} />
                         </div>
                         <div className="row">
