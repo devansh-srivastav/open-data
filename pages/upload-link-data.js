@@ -23,10 +23,10 @@ export default function Uploadlinkdata() {
 
     const [loading, setupload] = useState(false);
 
-    const categories = ["Bevölkerung und Gesellschaft", "Bildung, Kultur und Sport", "Energie", "Gesundheit", "Justiz, Rechtssystem und öffentliche Sicherheit",
+    const categories = ["Wählen Sie eine Kategorie","Bevölkerung und Gesellschaft", "Bildung, Kultur und Sport", "Energie", "Gesundheit", "Justiz, Rechtssystem und öffentliche Sicherheit",
         "Landwirtschaft", "Regierung und öffentlicher Sektor", "Regionen und Städte", "Umwelt", "Verkehr", "Wirtschaft und Finanzen", "Wissenschaft und Technologie", "Andere"
     ];
-    const licences = ["Datenlizenz Deutschland Namensnennung 2.0",
+    const licences = ["Wählen Sie eine Lizenz","Datenlizenz Deutschland Namensnennung 2.0",
         "Datenlizenz Deutschland - Zero - Version 2.0",
         "Creative Commons Namensnennung - 4.0 International(CC BY 4.0)",
         "Creative Commons Namensnennung(CC - BY)",
@@ -110,20 +110,20 @@ export default function Uploadlinkdata() {
                             <input type="text" value={query.date} name="date" hidden onChange={() => { }} />   
 
                             <div className="row">
-                                <span className="field">Resource-URL</span>
-                                <input placeholder="Link zur Quell-Datei" value={query.url} className={isRed && query.url == "" ? "red-border url" : "url"} type="text" name="url" onChange={handleChange()} />
+                                <span className="field">Quelle URL</span>
+                                <input value={query.url} className={isRed && query.url == "" ? "red-border url" : "url"} type="text" name="url" onChange={handleChange()} />
                             </div>
                             <div className="row">
                                 <span className="field">Titel</span>
-                                <input placeholder="Name des Datensatzes" type="text" className={isRed && query.title == "" ? "red-border" : ""} value={query.title} name="title" onChange={handleChange()} />
+                                <input type="text" className={isRed && query.title == "" ? "red-border" : ""} value={query.title} name="title" onChange={handleChange()} />
                             </div>
                             <div className="row">
                                 <span className="field">Beschreibung</span>
-                                <textarea placeholder="Kurze Beschreibung der hochgeladenen Daten" rows="5" type="text" value={query.desc} name="desc" onChange={handleChange()} />
+                                <textarea rows="5" type="text" value={query.desc} name="desc" onChange={handleChange()} />
                             </div>
                             <div className="row">
                                 <span className="field">Keywords</span>
-                                <input placeholder="Schlüsselwörter, um Ihren Datensatz in der Suche auffindbar zu machen" type="text" value={query.keys} name="keys" onChange={handleChange()} />
+                                <input type="text" value={query.keys} name="keys" onChange={handleChange()} />
                             </div>
                             <div className="row">
                                 <span className="field">Kategorie</span>
@@ -152,7 +152,7 @@ export default function Uploadlinkdata() {
                             </div>
                             <div className="row">
                                 <span className="field">Kommentar</span>
-                                <textarea placeholder="Hinterlassen Sie einen Kommentar zu diesem Datensatz" rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />
+                                <textarea rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />
                                 <div className="row center">
                                 <button type="button" name="submits" className="zuruk" onClick={() => (change == true && (query.url != "" || query.title != "" || query.desc != "" || query.comment != "" || query.keys != "")) ? openPopup(true) : router.push("/upload")}>
                                         Zurück

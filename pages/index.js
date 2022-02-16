@@ -23,7 +23,7 @@ export default function Home() {
                             </svg>
 
                             <h3 className="mt0 mr0 ml0 lh30 lh">Veröffentlichen Sie Ihre Daten auf der Open Data  <br />
-                                Plattform Bayern und machen so Ihre Daten für  <br />
+                                Plattform Bayern und machen Sie so Ihre Daten für  <br />
                                 eine breitere Öffentlichkeit auffindbar.
                             </h3>
                         </div>
@@ -40,7 +40,7 @@ export default function Home() {
                     <div className="sec">
                         <h3 className="mt0 mr0 ml0 ">Um Bayern erfolgreich in eine
                             digitale Zukunft zu navigieren,
-                            benötigen wir<span className="blue"> Ihre Unterstützung. </span>
+                            benötigen wir Ihre Unterstützung. 
 
                         </h3>
                         <div>

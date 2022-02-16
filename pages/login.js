@@ -95,7 +95,7 @@ export default function Home() {
                         <div className="sec">
                             <form className="login-form" name="open data" method="post" autoComplete="off">
                                 <input placeholder="Name" value={query.name} name="name" className={isRed && query.name == "" ? "red-border" : ""} onChange={handleChange()} />
-                                <input placeholder="Email" type="email" className={isRed && query.email == "" ? "red-border" : ""} value={query.email} name="email" onChange={handleChange()} />
+                                <input placeholder="E-Mail" type="email" className={isRed && query.email == "" ? "red-border" : ""} value={query.email} name="email" onChange={handleChange()} />
                                 <input placeholder="Organisation(und Abteilung)" className={isRed && query.org == "" ? "red-border" : ""} value={query.org} name="org" onChange={handleChange()} />
                                 <div className="bottom-btn mT80">
 
