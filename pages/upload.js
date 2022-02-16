@@ -55,7 +55,7 @@ export default function Home() {
 
 
                             <div className="cards c2" onClick={() => { open("link") }}>
-                                <h2 >Link zur<br /> Quell-Datei</h2>
+                                <h2 >Link zur<br /> Quell-Datei angeben</h2>
                                 <h4 >Ressource-URL zur Quell-Datei</h4>
                             </div>
 

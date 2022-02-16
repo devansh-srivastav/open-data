@@ -101,7 +101,7 @@ export default function Uploadlinkdata() {
                 {popup && <Popup popup={popup} openpopup={openPopup} />}
                 {!loading &&
                     <div className="input-screen">
-                        <h1>Link zur Verfügung stellen</h1>
+                        <h1>Link angeben</h1>
 
                         <form className="data-form" name="url upload" method="post" autoComplete="off">
                             <input type="email" value={email} name="email" hidden onChange={() => { }} />
@@ -110,7 +110,7 @@ export default function Uploadlinkdata() {
                             <input type="text" value={query.date} name="date" hidden onChange={() => { }} />   
 
                             <div className="row">
-                                <span className="field">Quelle URL</span>
+                                <span className="field">Ressource-URL</span>
                                 <input value={query.url} className={isRed && query.url == "" ? "red-border url" : "url"} type="text" name="url" onChange={handleChange()} />
                             </div>
                             <div className="row">
