@@ -17,7 +17,8 @@ export default function Uploadlinkdata() {
         url: "",
         category: "Bevolkerung und Gesellschaft",
         license: "Creative Commons",
-        comment: ""
+        comment: "",
+        date:new Date()
     });
 
     const [loading, setupload] = useState(false);
@@ -105,6 +106,7 @@ export default function Uploadlinkdata() {
                             <input type="email" value={email} name="email" hidden onChange={() => { }} />
                             <input type="text" value={name} name="name" hidden onChange={() => { }} />
                             <input type="text" value={org} name="org" hidden onChange={() => { }} />
+                            <input type="text" value={query.date} name="date" hidden onChange={() => { }} />   
 
                             <div className="row">
                                 <span className="field">Resource-URL</span>
@@ -151,7 +153,7 @@ export default function Uploadlinkdata() {
                                 <span className="field">Kommentar</span>
                                 <textarea placeholder="Hinterlassen Sie einen Kommentar zu diesem Datensatz" rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />
                                 <div className="row center">
-                                <button type="button" name="submits" className="zuruk" onClick={() => (change == true && (query.url!=""|| query.title!="")) ? openPopup(true) : router.push("/upload")}>
+                                <button type="button" name="submits" className="zuruk" onClick={() => (change == true && (query.url != "" || query.title != "" || query.desc != "" || query.comment != "" || query.keys != "")) ? openPopup(true) : router.push("/upload")}>
                                         Zurück
                                     </button>
 
