@@ -94,9 +94,9 @@ export default function Home() {
                         </div>
                         <div className="sec">
                             <form className="login-form" name="open data" method="post" autoComplete="off">
-                                <input placeholder="Name*" value={query.name} name="name" className={isRed && query.name == "" ? "red-border" : ""} onChange={handleChange()} />
-                                <input placeholder="Email*" type="email" className={isRed && query.email == "" ? "red-border" : ""} value={query.email} name="email" onChange={handleChange()} />
-                                <input placeholder="Organisation(und Abteilung)*" className={isRed && query.org == "" ? "red-border" : ""} value={query.org} name="org" onChange={handleChange()} />
+                                <input placeholder="Name" value={query.name} name="name" className={isRed && query.name == "" ? "red-border" : ""} onChange={handleChange()} />
+                                <input placeholder="Email" type="email" className={isRed && query.email == "" ? "red-border" : ""} value={query.email} name="email" onChange={handleChange()} />
+                                <input placeholder="Organisation(und Abteilung)" className={isRed && query.org == "" ? "red-border" : ""} value={query.org} name="org" onChange={handleChange()} />
                                 <div className="bottom-btn mT80">
 
                                     <button type="button" value="submit" name="submit" className="zuruk" onClick={() => (change == true && (query.name != "" || query.email != "" || query.org != "")) ? openPopup(true) : router.push("/")}>

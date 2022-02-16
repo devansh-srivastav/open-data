@@ -8,7 +8,7 @@ class Footer extends Component {
             <footer>
                 <div className="main-screen2">
                     <div className="first">
-                        <h5>Dies ist ein Pilotprojekt der Digitalschmiede Bayern in Kooperation mit der Digital <br />Product School und dem Bayerischen Staatsministerium für Digitales.</h5>
+                        <h5>Dies ist ein Pilotprojekt der Digitalschmiede Bayern in Kooperation mit der Digital Product School und dem Bayerischen Staatsministerium für Digitales.</h5>
                     </div>
                     <div className='sec'>
                     <div className='foot-logo'>

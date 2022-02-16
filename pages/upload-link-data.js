@@ -17,7 +17,8 @@ export default function Uploadlinkdata() {
         url: "",
         category: "Bevolkerung und Gesellschaft",
         license: "Creative Commons",
-        comment: ""
+        comment: "",
+        date:new Date()
     });
 
     const [loading, setupload] = useState(false);
@@ -43,6 +44,7 @@ export default function Uploadlinkdata() {
     const [popupcontent, setContent] = useState("Sind Sie sicher, dass Sie zuruckgehen wollen? Die eingegebenen Daten werden nicht gespeichert.");
     const [popup, openPopup] = useState(false);
     const handleChange = () => (e) => {
+        console.log(query.date)
         const name = e.target.name;
         const value = e.target.value;
         setQuery((prevState) => ({
@@ -105,13 +107,14 @@ export default function Uploadlinkdata() {
                             <input type="email" value={email} name="email" hidden onChange={() => { }} />
                             <input type="text" value={name} name="name" hidden onChange={() => { }} />
                             <input type="text" value={org} name="org" hidden onChange={() => { }} />
+                            <input type="text" value={query.date} name="date" hidden onChange={() => { }} />   
 
                             <div className="row">
-                                <span className="field">Resource-URL*</span>
+                                <span className="field">Resource-URL</span>
                                 <input placeholder="Link zur Quell-Datei" value={query.url} className={isRed && query.url == "" ? "red-border url" : "url"} type="text" name="url" onChange={handleChange()} />
                             </div>
                             <div className="row">
-                                <span className="field">Titel*</span>
+                                <span className="field">Titel</span>
                                 <input placeholder="Name des Datensatzes" type="text" className={isRed && query.title == "" ? "red-border" : ""} value={query.title} name="title" onChange={handleChange()} />
                             </div>
                             <div className="row">
@@ -151,7 +154,7 @@ export default function Uploadlinkdata() {
                                 <span className="field">Kommentar</span>
                                 <textarea placeholder="Hinterlassen Sie einen Kommentar zu diesem Datensatz" rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />
                                 <div className="row center">
-                                <button type="button" name="submits" className="zuruk" onClick={() => (change == true && (query.url!=""|| query.title!="")) ? openPopup(true) : router.push("/upload")}>
+                                <button type="button" name="submits" className="zuruk" onClick={() => (change == true && (query.url != "" || query.title != "" || query.desc != "" || query.comment != "" || query.keys != "")) ? openPopup(true) : router.push("/upload")}>
                                         Zurück
                                     </button>
 
@@ -174,7 +177,6 @@ export default function Uploadlinkdata() {
                 }
 
             </main>
-
             <Footer />
         </div>
     );
