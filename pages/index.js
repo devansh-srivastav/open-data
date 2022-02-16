@@ -86,7 +86,7 @@ export default function Home() {
                                 Was passiert mit den Daten nach dem Hochladen?
                             </h3>
                             <h4>
-                                Derzeit arbeiten wir an der automatischen <br /> Aufbereitung des Datensatzes, so dass dieser je nach <br /> Lizenz Ihres Datensatzes an das Bundesportal <br /> GOVDATA.de weitergeleitet werden kann.
+                                Derzeit arbeiten wir an der automatischen Aufbereitung des Datensatzes, so dass dieser je nach Lizenz Ihres Datensatzes an das Bundesportal GOVDATA.de weitergeleitet werden kann.
                             </h4>
                         </div>
                     </div>
