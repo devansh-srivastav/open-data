@@ -438,10 +438,18 @@ input, textarea {
     color: #5B76FF;
 }
 
+.red-l {
+    color: #CE0D18;
+}
+
 .blue-b {
     border-top: 3px solid #5B76FF !important;
 }
 
 .black-b {
     border-top:3px solid black !important;
+}
+
+.red-b {
+    border-top: 3px solid #CE0D18 !important;
 }
