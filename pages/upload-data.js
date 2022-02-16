@@ -31,6 +31,7 @@ export default function Uploaddata() {
         category: "Bevolkerung und Gesellschaft",
         license: "Creative Commons",
         comment: "",
+        date:new Date()
     });
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
@@ -42,6 +43,7 @@ export default function Uploaddata() {
     const [popupcontent, setContent] = useState("Sind Sie sicher, dass Sie zuruckgehen wollen? Die eingegebenen Daten werden nicht gespeichert.");
     const [popup, openPopup] = useState(false);
     const handleChange = () => (e) => {
+        console.log(query.date)
         const name = e.target.name;
         const value = e.target.value;
         setQuery((prevState) => ({

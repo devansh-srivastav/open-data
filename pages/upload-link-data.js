@@ -44,6 +44,7 @@ export default function Uploadlinkdata() {
     const [popupcontent, setContent] = useState("Sind Sie sicher, dass Sie zuruckgehen wollen? Die eingegebenen Daten werden nicht gespeichert.");
     const [popup, openPopup] = useState(false);
     const handleChange = () => (e) => {
+        console.log(query.date)
         const name = e.target.name;
         const value = e.target.value;
         setQuery((prevState) => ({
