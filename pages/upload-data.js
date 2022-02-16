@@ -31,6 +31,7 @@ export default function Uploaddata() {
         category: "Bevolkerung und Gesellschaft",
         license: "Creative Commons",
         comment: "",
+        date:new Date()
     });
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
@@ -42,6 +43,7 @@ export default function Uploaddata() {
     const [popupcontent, setContent] = useState("Sind Sie sicher, dass Sie zuruckgehen wollen? Die eingegebenen Daten werden nicht gespeichert.");
     const [popup, openPopup] = useState(false);
     const handleChange = () => (e) => {
+        console.log(query.date)
         const name = e.target.name;
         const value = e.target.value;
         setQuery((prevState) => ({
@@ -142,14 +144,14 @@ export default function Uploaddata() {
                         <input type="text" value={fileUrl} name="fileUrl" hidden onChange={() => { }} />
 
                         <div className="row">
-                            <span className="field">Datei hochladen*</span>
+                            <span className="field">Datei hochladen</span>
                             <div className="col">
                                 <input placeholder="Datei auswahlen" type="file" className={isRed && query.file == "" ? "red-border file" : "file"} name="file" onChange={handleFileChange()} />
                                 {/*<span className={isRed && size > 50 ? "small-err red" : "small-err "}>Die maximale Dateigröße beträgt 50 MB</span>*/}
                             </div>
                         </div>
                         <div className="row">
-                            <span className="field">Titel*</span>
+                            <span className="field">Titel</span>
                             <input placeholder="Name des Datensatzes" type="text" className={isRed && query.title == "" ? "red-border" : ""}  value={query.title} name="title" onChange={handleChange()} />
                         </div>
                         <div className="row">
@@ -189,7 +191,7 @@ export default function Uploaddata() {
                             <span className="field">Kommentar</span>
                             <textarea placeholder="Hinterlassen Sie einen Kommentar zu diesem Datensatz" rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />
                             <div className="row center">
-                                <button type="button" name="submits" className="zuruk" onClick={() => (change == true && (query.file != "" || query.title != ""))?openPopup(true):router.push("/upload")}>
+                                <button type="button" name="submits" className="zuruk" onClick={() => (change == true && (query.file != "" || query.title != "" || query.desc!="" || query.comment!="" || query.keys!="" ))?openPopup(true):router.push("/upload")}>
                                     Zurück
                                 </button>
 
@@ -210,6 +212,8 @@ export default function Uploaddata() {
                         <input type="text" value={org} name="org" hidden onChange={() => { }} />
                         <input type="text" value={size} name="size" hidden onChange={() => { }} />
                         <input type="text" value={fileUrl} name="fileUrl" hidden onChange={() => { }} />
+                        <input type="text" value={query.date} name="date" hidden onChange={() => { }} />
+
                         <input placeholder="Datei auswahlen" type="file" className={isRed && query.file == "" ? "red-border" : ""} name="file" onChange={handleFileChange()} />
 
                         <textarea placeholder="Kurze Beschreibung der hochgeladenen Daten" rows="5" type="text" value={query.desc} name="desc" onChange={handleChange()} />
