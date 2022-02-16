@@ -423,11 +423,11 @@ input, textarea {
     background-color: white;
     box-sizing: border-box;
     width: auto;
-    font-size: 0.9em;
+    font-size: 0.55em;
 }
 
 .big-label{
-    min-width:114px;
+    min-width:68px;
 }      
 
 .black-l{
