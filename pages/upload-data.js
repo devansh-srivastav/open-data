@@ -189,7 +189,7 @@ export default function Uploaddata() {
                             <span className="field">Kommentar</span>
                             <textarea placeholder="Hinterlassen Sie einen Kommentar zu diesem Datensatz" rows="5" type="text" value={query.comment} name="comment" onChange={handleChange()} />
                             <div className="row center">
-                                <button type="button" name="submits" className="zuruk" onClick={() => (change == true && (query.file != "" || query.title != ""))?openPopup(true):router.push("/upload")}>
+                                <button type="button" name="submits" className="zuruk" onClick={() => (change == true && (query.file != "" || query.title != "" || query.desc!="" || query.comment!="" || query.keys!="" ))?openPopup(true):router.push("/upload")}>
                                     Zurück
                                 </button>
 
@@ -210,6 +210,7 @@ export default function Uploaddata() {
                         <input type="text" value={org} name="org" hidden onChange={() => { }} />
                         <input type="text" value={size} name="size" hidden onChange={() => { }} />
                         <input type="text" value={fileUrl} name="fileUrl" hidden onChange={() => { }} />
+                        <input type="text" value={query.date} name="org" hidden onChange={() => { }} />
                         <input placeholder="Datei auswahlen" type="file" className={isRed && query.file == "" ? "red-border" : ""} name="file" onChange={handleFileChange()} />
 
                         <textarea placeholder="Kurze Beschreibung der hochgeladenen Daten" rows="5" type="text" value={query.desc} name="desc" onChange={handleChange()} />
