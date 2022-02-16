@@ -177,7 +177,6 @@ export default function Uploadlinkdata() {
                 }
 
             </main>
-
             <Footer />
         </div>
     );
