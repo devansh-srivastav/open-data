@@ -5,11 +5,15 @@ import { useRouter } from 'next/router'
 import Loader from '../components/loading';
 import Footer from '../components/footer.js';
 import Header from '../components/header.js';
+import axios from "axios";
 
 export default function Uploaddata() {
 
 
-    const categories = ["Wählen Sie eine Kategorie","Bevölkerung und Gesellschaft", "Bildung, Kultur und Sport", "Energie", "Gesundheit", "Justiz, Rechtssystem und öffentliche Sicherheit",
+    const apiUrl = "https://opendatabayernbackend.herokuapp.com/api/";
+    //  const apiUrl = "http://localhost:3100/api/";
+
+    const categories = ["Bevölkerung und Gesellschaft", "Bildung, Kultur und Sport", "Energie", "Gesundheit", "Justiz, Rechtssystem und öffentliche Sicherheit",
         "Landwirtschaft", "Regierung und öffentlicher Sektor", "Regionen und Städte", "Umwelt", "Verkehr", "Wirtschaft und Finanzen", "Wissenschaft und Technologie", "Andere"
     ];
     const licences = ["Wählen Sie eine Lizenz","Datenlizenz Deutschland Namensnennung 2.0",
@@ -27,11 +31,15 @@ export default function Uploaddata() {
         title: "",
         desc: "",
         keys: "",
-        file: "",
         category: "Bevolkerung und Gesellschaft",
         license: "Creative Commons",
         comment: "",
-        date:new Date()
+        date: new Date(),
+        type: "file",
+        link: "",
+        file: "",
+        email:""
+
     });
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
@@ -65,14 +73,18 @@ export default function Uploaddata() {
         setOrg(localStorage.getItem("org"));
         setFile(localStorage.getItem("email") + "_" + e.target.files[0].name);
         setSize(e.target.files[0].size / 1048576);
+        //setQuery({ ...query, email: localStorage.getItem("email") });
+        //setQuery({ ...query, file: e.target.files[0].name });
+        console.log(query)
         setChange(true);
     };
     const router = useRouter();
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwITNaAxw3PgsLYZJ7Fn1oJ2XnPb09BNxo48x1ZCGc5LAdkNmaNt357u9NpR2tmvposbw/exec'
 
-    const submit = (e) => {
+    const submit =async (e) => {
         e.preventDefault();
         if (query.file == "" || query.title == "") {
+            conso
             setRed(true);
         }
          else {
@@ -80,46 +92,40 @@ export default function Uploaddata() {
 
             setupload(true);
             let form = document.forms['file upload']
-            let form2 = document.forms['dummy upload']
-            const file = form.file.files[0];
+            const file = form.file.files[form.file.files.length-1];
             form = document.forms['file upload'];
-            if (file.size < 50 * 1048576) {
-                const fr = new FileReader();
-                fr.readAsArrayBuffer(file);
-                fr.onload = f => {
-                    let newName = email + "_" + file.name;
-                    const orgName = file.name;
-                    if (orgName.includes(".")) {
-                        const orgExt = orgName.split(".").pop();
-                        if (orgExt != newName.split(".").pop()) {
-                            newName = newName ? `${newName}.${orgExt}` : orgName;
-                        }
+            query['email'] = localStorage.getItem('email');
+            query['file'] = file.name;
+
+            
+
+            const config = { headers: { 'Content-Type': 'multipart/form-data' } };
+            const configs = { headers: { 'Content-Type': 'application/json' } };
+            let fd = new FormData();
+            fd.append('file',file);
+
+            let res = axios.post(apiUrl + "addFileData", fd, config).
+                then((res) => {
+                    if (res.status == 200) {
+                        let ress = axios.patch(apiUrl + "addData", JSON.stringify(query), configs).
+                            then((res) => {
+                                if (res.status == 200) {
+                                    router.push("/success")
+                                }
+                            }).catch((err) => {
+                                console.log(err)
+
+                                router.push("/error")
+                            })
                     }
-                    const qs = new URLSearchParams({ filename: newName, mimeType: file.type });  // Modified
+                }).catch((err) => {
+                    console.log(err)
+                    router.push("/error")
+                })
 
-
-                    fetch(`${fileURL}?${qs}`, { method: "POST", body: JSON.stringify([...new Int8Array(f.target.result)]), mode: 'no-cors', headers: { cookie: 'ip2loc=isset' } })
-                        .then(res => res.json)
-                        .then(e => {
-                            // setFile(e != undefined ? e.fileUrl : "")
-                            fetch(scriptURL, { method: 'POST', body: new FormData(form2), mode: 'no-cors', headers: { cookie: 'ip2loc=isset' } })
-                                .then(response => router.push("/success"))
-                                .catch(error => router.push("/error"))
-                        }
-                        )  // <--- You can retrieve the returned value here.
-                        .catch(err => {
-                            router.push("/error")
-                        });
-
-
-                }
-            }
-            else {
-                fetch(scriptURL, { method: 'POST', body: new FormData(form2), mode: 'no-cors', headers: { cookie: 'ip2loc=isset' } })
-                    .then(response => router.push("/success"))
-                    .catch(error => router.push("/error"))
-            }
+                    
         }
+        return e;
     }
 
 

@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import Loader from '../components/loading'
 import Footer from '../components/footer.js';
 import Header from '../components/header.js';
+import axios from "axios";
 
 export default function Uploadlinkdata() {
 
@@ -18,8 +19,13 @@ export default function Uploadlinkdata() {
         category: "Bevolkerung und Gesellschaft",
         license: "Creative Commons",
         comment: "",
-        date:new Date()
+        date: new Date(),
+        file: "",
+        type:"link"
     });
+    //  const apiUrl = "https://my-contact-api-backend.herokuapp.com/api/";
+    const apiUrl = "http://localhost:3100/api/";
+
 
     const [loading, setupload] = useState(false);
 
@@ -55,27 +61,71 @@ export default function Uploadlinkdata() {
             setEmail(localStorage.getItem("email"));
             setName(localStorage.getItem("name"));
             setOrg(localStorage.getItem("org"));
+            setQuery({ ...query, email: localStorage.getItem("email") });
 
         }
         setChange(true);
     };
 
 
-    const submit = (e) => {
+    const submit = async (e) => {
         e.preventDefault();
-        if (query.file == "" || query.title == "") {
+        if (query.url == "" || query.title == "") {
+            console.log("Y")
             setRed(true);
         }
         else {
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbw4gMBJnUjgqdi2Ynyu1XBQ57D0i_dTVwtTH16cADUFS7cTP6AA6rv1WwhLIyjcL3fX/exec'
-            const form = document.forms['url upload']
-            setupload(true);
+            let res = await axios({
+                url: apiUrl + "addData",
+                method: 'patch',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                data: JSON.stringify(query)
+            }
+            ).then((res) => {
+                console.log("Y")
+                if (res.status == 200) {
+                  router.push("/success")
+                }
+            }).catch((err) => {
+                router.push("/error")
+            })
 
-            fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors', headers: { cookie: 'ip2loc=isset' } })
-                .then(response => router.push("/success"))
-                .catch(error => router.push("/error"));
         }
+        return e;
+
     }
+
+
+
+    const config = { headers: { 'Content-Type': 'multipart/form-data' } };
+    const configs = { headers: { 'Content-Type': 'application/json' } };
+
+    let res = axios.post(apiUrl + "addFileData", file, config).
+        then((res) => {
+            if (res.status == 200) {
+                let ress = axios.patch(apiUrl + "addData", JSON.stringify(query), configs).
+                    then((res) => {
+                        if (res.status == 200) {
+                            router.push("/success")
+                        }
+                    }).catch((err) => {
+                        console.log(err)
+
+                        router.push("/error")
+                    })
+            }
+        }).catch((err) => {
+            console.log(err)
+            router.push("/error")
+        })
+
+
+
+
+
+
 
     const router = useRouter();
     const finalSubmit = () => {
