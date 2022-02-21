@@ -99,27 +99,27 @@ export default function Uploadlinkdata() {
 
 
 
-    const config = { headers: { 'Content-Type': 'multipart/form-data' } };
-    const configs = { headers: { 'Content-Type': 'application/json' } };
+    // const config = { headers: { 'Content-Type': 'multipart/form-data' } };
+    // const configs = { headers: { 'Content-Type': 'application/json' } };
 
-    let res = axios.post(apiUrl + "addFileData", file, config).
-        then((res) => {
-            if (res.status == 200) {
-                let ress = axios.patch(apiUrl + "addData", JSON.stringify(query), configs).
-                    then((res) => {
-                        if (res.status == 200) {
-                            router.push("/success")
-                        }
-                    }).catch((err) => {
-                        console.log(err)
+    // let res = axios.post(apiUrl + "addFileData", file, config).
+    //     then((res) => {
+    //         if (res.status == 200) {
+    //             let ress = axios.patch(apiUrl + "addData", JSON.stringify(query), configs).
+    //                 then((res) => {
+    //                     if (res.status == 200) {
+    //                         router.push("/success")
+    //                     }
+    //                 }).catch((err) => {
+    //                     console.log(err)
 
-                        router.push("/error")
-                    })
-            }
-        }).catch((err) => {
-            console.log(err)
-            router.push("/error")
-        })
+    //                     router.push("/error")
+    //                 })
+    //         }
+    //     }).catch((err) => {
+    //         console.log(err)
+    //         router.push("/error")
+    //     })
 
 
 
