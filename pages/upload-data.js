@@ -13,7 +13,7 @@ export default function Uploaddata() {
     const apiUrl = "https://opendatabayernbackend.herokuapp.com/api/";
     //  const apiUrl = "http://localhost:3100/api/";
 
-    const categories = ["Bevölkerung und Gesellschaft", "Bildung, Kultur und Sport", "Energie", "Gesundheit", "Justiz, Rechtssystem und öffentliche Sicherheit",
+    const categories = ["Wählen Sie eine Kategorie","Bevölkerung und Gesellschaft", "Bildung, Kultur und Sport", "Energie", "Gesundheit", "Justiz, Rechtssystem und öffentliche Sicherheit",
         "Landwirtschaft", "Regierung und öffentlicher Sektor", "Regionen und Städte", "Umwelt", "Verkehr", "Wirtschaft und Finanzen", "Wissenschaft und Technologie", "Andere"
     ];
     const licences = ["Wählen Sie eine Lizenz","Datenlizenz Deutschland Namensnennung 2.0",
