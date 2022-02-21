@@ -5,6 +5,7 @@ import Image from "next/image"
 import Footer from '../components/footer.js';
 import Header from '../components/header.js';
 import Popup from '../components/popup';
+import axios from "axios";
 
 export default function Home() {
     const router = useRouter();
@@ -18,6 +19,8 @@ export default function Home() {
         org: ""
     });
 
+    //  const apiUrl = "https://my-contact-api-backend.herokuapp.com/api/";
+    const apiUrl = "http://localhost:3100/api/";
 
     const handleChange = () => (e) => {
         const name = e.target.name;
@@ -33,24 +36,39 @@ export default function Home() {
     const [change, setChange] = useState(false);
     const [loading, setupload] = useState(false);
     const [isRed, setRed] = useState(false);
-    const submit = () => (e) => {
+    const submit = () => async (e) => {
         e.preventDefault();
         if (query.name != "" && query.email != "" && query.org != "") {
             setRed(false);
             setupload(true);
+
 
             localStorage.setItem("email", query.email);
             localStorage.setItem("name", query.name);
             localStorage.setItem("org", query.org);
 
 
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbwbLxUpNtBPKSNKg1Rh7OOcyiZKMFbFP49Y--RWhOXBLT3UyzK4ata_mka19mtuaS2K/exec'
-            const form = document.forms['open data']
+            let res = await axios({
+                url: apiUrl + "signin",
+                    method: 'post',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    data: JSON.stringify({
+                        org: query.org,
+                        name: query.name,
+                        email: query.email
+                    })
+                }
+                ).then((res) => {
 
-            fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors', headers: { cookie: 'ip2loc=isset' } })
-                .then(response => { setupload(false); router.push("/upload") })
-                .catch(error => { setupload(false); window.alert("please retry") });
-
+                    if (res.status == 200) {
+                        setupload(false); router.push("/upload")
+                    }
+                }).catch((err) => {
+                    setupload(false); window.alert("please retry")
+                })
+            
 
         }
         else {
