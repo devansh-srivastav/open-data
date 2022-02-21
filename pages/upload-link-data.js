@@ -24,7 +24,7 @@ export default function Uploadlinkdata() {
         type:"link"
     });
     //  const apiUrl = "https://my-contact-api-backend.herokuapp.com/api/";
-    const apiUrl = "http://localhost:3100/api/";
+    const apiUrl = "https://opendatabayernbackend.herokuapp.com/api/";
 
 
     const [loading, setupload] = useState(false);
@@ -97,29 +97,6 @@ export default function Uploadlinkdata() {
 
     }
 
-
-
-    // const config = { headers: { 'Content-Type': 'multipart/form-data' } };
-    // const configs = { headers: { 'Content-Type': 'application/json' } };
-
-    // let res = axios.post(apiUrl + "addFileData", file, config).
-    //     then((res) => {
-    //         if (res.status == 200) {
-    //             let ress = axios.patch(apiUrl + "addData", JSON.stringify(query), configs).
-    //                 then((res) => {
-    //                     if (res.status == 200) {
-    //                         router.push("/success")
-    //                     }
-    //                 }).catch((err) => {
-    //                     console.log(err)
-
-    //                     router.push("/error")
-    //                 })
-    //         }
-    //     }).catch((err) => {
-    //         console.log(err)
-    //         router.push("/error")
-    //     })
 
 
 

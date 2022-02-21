@@ -20,7 +20,7 @@ export default function Home() {
     });
 
     //  const apiUrl = "https://my-contact-api-backend.herokuapp.com/api/";
-    const apiUrl = "http://localhost:3100/api/";
+    const apiUrl = "https://opendatabayernbackend.herokuapp.com/api/";
 
     const handleChange = () => (e) => {
         const name = e.target.name;
