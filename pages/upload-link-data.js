@@ -21,10 +21,11 @@ export default function Uploadlinkdata() {
         comment: "",
         date: new Date(),
         file: "",
-        type:"link"
+        type: "link",
+        id:""
     });
     //  const apiUrl = "https://my-contact-api-backend.herokuapp.com/api/";
-    const apiUrl = "https://opendatabayernbackend.herokuapp.com/api/";
+   const apiUrl = "https://opendatabayernbackend.herokuapp.com/api/";
 
 
     const [loading, setupload] = useState(false);
