@@ -457,3 +457,8 @@ input, textarea {
 .lh{
     line-height:130px;
 }
+
+table, th, td {
+    border: 1px solid;
+    text-align:center
+}

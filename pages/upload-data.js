@@ -10,8 +10,8 @@ import axios from "axios";
 export default function Uploaddata() {
 
 
-    const apiUrl = "https://opendatabayernbackend.herokuapp.com/api/";
-    //  const apiUrl = "http://localhost:3100/api/";
+     const apiUrl = "https://opendatabayernbackend.herokuapp.com/api/";
+    //const apiUrl = "http://localhost:3100/api/";
 
     const categories = ["Wählen Sie eine Kategorie","Bevölkerung und Gesellschaft", "Bildung, Kultur und Sport", "Energie", "Gesundheit", "Justiz, Rechtssystem und öffentliche Sicherheit",
         "Landwirtschaft", "Regierung und öffentlicher Sektor", "Regionen und Städte", "Umwelt", "Verkehr", "Wirtschaft und Finanzen", "Wissenschaft und Technologie", "Andere"
@@ -38,8 +38,8 @@ export default function Uploaddata() {
         type: "file",
         link: "",
         file: "",
-        email:""
-
+        email: "",
+        id: "",
     });
     const [email, setEmail] = useState("");
     const [name, setName] = useState("");
@@ -107,6 +107,7 @@ export default function Uploaddata() {
             let res = axios.post(apiUrl + "addFileData", fd, config).
                 then((res) => {
                     if (res.status == 200) {
+                        query['id'] = res.result;
                         let ress = axios.patch(apiUrl + "addData", JSON.stringify(query), configs).
                             then((res) => {
                                 if (res.status == 200) {
