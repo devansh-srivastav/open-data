@@ -104,10 +104,13 @@ export default function Uploaddata() {
             let fd = new FormData();
             fd.append('file',file);
 
+
+
             let res = axios.post(apiUrl + "addFileData", fd, config).
                 then((res) => {
                     if (res.status == 200) {
-                        query['id'] = res.result;
+                        console.log(res)
+                        query['id'] = res.data.result;
                         let ress = axios.patch(apiUrl + "addData", JSON.stringify(query), configs).
                             then((res) => {
                                 if (res.status == 200) {
