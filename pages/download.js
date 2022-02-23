@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import Loader from '../components/loading'
 import axios from "axios";
 
-export default function download() {
+export default function Download() {
 
     const [arr, setArr] = useState([]) ;
     const [isTrue, settrue] = useState(false);
