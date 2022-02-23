@@ -127,7 +127,7 @@ export default function Download() {
                                                         {data.type}
                                                     </td>
                                                     <td>
-                                                        {data.link != "" && data.link != undefined && <a href={data.link} target="_blank">{data.link}</a>}
+                                                        {data.link != "" && data.link != undefined && <a href={data.link} target="_blank" rel="noreferrer nofollow">{data.link}</a>}
                                                     </td>
                                                     <td>
                                                         {data.id!="" && data.id!=undefined && <a href={apiUrl + "files/?id=" + data.id} download>{data.file}</a>}
