@@ -117,8 +117,6 @@ export default function Uploaddata() {
                                     router.push("/success")
                                 }
                             }).catch((err) => {
-                                console.log(err)
-
                                 router.push("/error")
                             })
                     }
